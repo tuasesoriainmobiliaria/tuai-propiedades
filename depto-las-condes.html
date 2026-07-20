@@ -17,11 +17,11 @@ h1,h2,.spec b{font-family:'Bebas Neue',Impact,sans-serif;letter-spacing:2px;font
 em,.emo,.ss,.loc{font-family:Lora,Georgia,serif;font-style:italic}
 nav{position:sticky;top:0;z-index:50;background:#fffffff2;border-bottom:1px solid var(--l);
 display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
-.logo img{height:38px;width:auto;display:block}
-.logo span{display:block;color:var(--t);font-size:.62rem;letter-spacing:2px;line-height:1;margin-top:3px}
+.logo img{height:38px;width:auto}
+.logo span{display:block;color:var(--t);font-size:.6rem;letter-spacing:2px;margin-top:3px}
 .hero{position:relative}
-.hero img{width:100%;height:min(58vh,460px);object-fit:cover;background:var(--b2)}
-.hero .cap{padding:20px}
+.hero>img{width:100%;height:min(58vh,460px);object-fit:cover;background:var(--b2)}
+.cap{padding:20px}
 .hero h1{font-size:clamp(1.7rem,6vw,3rem);line-height:1.05}
 .hero h1 em{color:var(--n);font-style:normal;font-family:inherit}
 .loc{color:var(--g);font-size:.95rem}
@@ -44,10 +44,11 @@ h2 em{color:var(--n);font-style:normal;font-family:inherit}
 .emo{color:var(--n);font-size:1.1rem;margin-bottom:12px}
 ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-top:20px}
 li{background:var(--b2);border:1px solid var(--l);border-radius:9px;padding:10px 13px;font-size:.9rem}
-li::before{content:"✦ ";color:var(--n)}
+li::before{content:"\2726 ";color:var(--n)}
 .cta{text-align:center;background:var(--b2);border:1px solid var(--l);border-radius:18px;padding:40px 20px}
 .btn{display:inline-block;background:var(--n);color:#fff;font-weight:600;padding:13px 28px;border-radius:40px;margin-top:14px}
 footer{text-align:center;padding:26px 20px;font-size:.8rem;color:#969696;border-top:1px solid var(--l)}
+footer img{height:44px;width:auto;margin:0 auto 12px}
 footer b{color:var(--n)}
 .wa{position:fixed;bottom:18px;right:18px;z-index:60;width:52px;height:52px;border-radius:50%;background:#25D366;
 display:grid;place-items:center;box-shadow:0 6px 18px #3333334d}
@@ -57,7 +58,7 @@ display:grid;place-items:center;box-shadow:0 6px 18px #3333334d}
 #lb img{max-width:94vw;max-height:86vh;border-radius:6px}
 #lb b{position:absolute;top:10px;right:18px;font-size:2.2rem;color:var(--n);cursor:pointer;font-weight:400}
 @media(max-width:600px){
-  .hero img{height:44vh}
+  .hero>img{height:44vh}
   .gal{grid-template-columns:1fr 1fr;gap:6px}
   section{padding:28px 0}
 }
@@ -71,7 +72,7 @@ display:grid;place-items:center;box-shadow:0 6px 18px #3333334d}
 </nav>
 
 <header class="hero">
-  <img src="lc_01.jpg" alt="Departamento Los Dominicos 96 m2 con terraza panoramica" fetchpriority="high">
+  <img id="portada" alt="Departamento Los Dominicos 96 m² · 3 dormitorios" fetchpriority="high">
   <div class="cap">
     <p class="loc">Av. Apoquindo, a pasos de Metro Los Dominicos · Las Condes</p>
     <h1>DEPARTAMENTO <em>96 M²</em><br>TERRAZA PANORÁMICA 180°</h1>
@@ -96,46 +97,30 @@ display:grid;place-items:center;box-shadow:0 6px 18px #3333334d}
   <section>
     <h2>GALERÍA DE <em>FOTOS</em></h2>
     <p class="ss">Toca una foto para verla en grande.</p>
-    <div class="gal" id="gal">
-      <img src="lc_01.jpg" alt="Foto 1" loading="lazy" decoding="async">
-      <img src="lc_02.jpg" alt="Foto 2" loading="lazy" decoding="async">
-      <img src="lc_03.jpg" alt="Foto 3" loading="lazy" decoding="async">
-      <img src="lc_04.jpg" alt="Foto 4" loading="lazy" decoding="async">
-      <img src="lc_05.jpg" alt="Foto 5" loading="lazy" decoding="async">
-      <img src="lc_06.jpg" alt="Foto 6" loading="lazy" decoding="async">
-      <img src="lc_07.jpg" alt="Foto 7" loading="lazy" decoding="async">
-      <img src="lc_08.jpg" alt="Foto 8" loading="lazy" decoding="async">
-      <img src="lc_09.jpg" alt="Foto 9" loading="lazy" decoding="async">
-      <img src="lc_10.jpg" alt="Foto 10" loading="lazy" decoding="async">
-      <img src="lc_11.jpg" alt="Foto 11" loading="lazy" decoding="async">
-      <img src="lc_12.jpg" alt="Foto 12" loading="lazy" decoding="async">
-    </div>
+    <div class="gal" id="gal"></div>
   </section>
 
   <section class="desc">
     <h2>SOBRE ESTA <em>PROPIEDAD</em></h2>
     <p class="emo">"Despertar cada mañana con la cordillera frente a ti, a pasos del metro."</p>
     <p>Departamento de 96 m² en Av. Apoquindo, a pasos del Metro Los Dominicos. Tiene 3 dormitorios, 2 baños y una terraza panorámica de 12 m² con vista 180°. Ubicación privilegiada en Las Condes, conectada y con todos los servicios cerca.</p>
-    <ul>
-      <li>96 m² totales</li>
-      <li>3 dormitorios</li>
-      <li>2 baños</li>
-      <li>Terraza panorámica de 12 m² · vista 180°</li>
-      <li>Av. Apoquindo, a pasos de Metro Los Dominicos</li>
-      <li>Comuna de Las Condes</li>
-    </ul>
+    <ul><li>96 m² totales</li><li>3 dormitorios</li><li>2 baños</li><li>Terraza panorámica de 12 m² · vista 180°</li><li>Av. Apoquindo, a pasos de Metro Los Dominicos</li><li>Comuna de Las Condes</li></ul>
   </section>
 
   <section>
     <div class="cta">
       <h2>¿QUIERES <em style="color:var(--n)">VISITARLA</em>?</h2>
       <p class="ss">Agenda tu visita hoy.</p>
-      <a class="btn" href="https://wa.me/56998383991?text=Hola%2C%20me%20interesa%20el%20Depto%20Las%20Condes%2096%20m2" target="_blank" rel="noopener">Agendar por WhatsApp</a>
+      <a class="btn" href="https://wa.me/56998383991?text=Hola%2C%20me%20interesa%20el%20Depto%20Los%20Dominicos%2096%20m2" target="_blank" rel="noopener">Agendar por WhatsApp</a>
     </div>
   </section>
 </main>
 
-<footer><img src="logo-tuai.png" alt="TuAI" style="height:44px;width:auto;margin:0 auto 12px"><br>© 2026 <b>Tu Asesoría Inmobiliaria</b><br>WhatsApp +56 9 9838 3991 · tuasesoriainmobiliariacl@gmail.com</footer>
+<footer>
+  <img src="logo-tuai.png" alt="TuAI">
+  © 2026 <b>Tu Asesoría Inmobiliaria</b><br>
+  WhatsApp +56 9 9838 3991 · tuasesoriainmobiliariacl@gmail.com
+</footer>
 
 <a class="wa" href="https://wa.me/56998383991" target="_blank" rel="noopener" aria-label="WhatsApp">
 <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z"/></svg></a>
@@ -143,13 +128,32 @@ display:grid;place-items:center;box-shadow:0 6px 18px #3333334d}
 <div id="lb"><b>&times;</b><img alt=""></div>
 
 <script>
-// Si una foto no existe, se oculta. Lightbox al tocar.
-const lb=document.getElementById('lb'),li=lb.querySelector('img');
-document.getElementById('gal').addEventListener('click',e=>{
-  if(e.target.tagName==='IMG'){li.src=e.target.src;lb.classList.add('on')}
-});
-lb.onclick=()=>lb.classList.remove('on');
-document.querySelectorAll('.gal img').forEach(i=>i.onerror=()=>i.remove());
+/* Las fotos se detectan solas: sube lc_01.jpg, lc_02.jpg... y aparecen.
+   No hay que indicar cuántas son ni tocar este código nunca. */
+const PREF = "lc", TOPE = 40;
+
+(async function () {
+  const encontradas = (await Promise.all(
+    Array.from({length: TOPE}, (_, k) => k + 1).map(async n => {
+      const src = PREF + "_" + String(n).padStart(2, "0") + ".jpg";
+      try { return (await fetch(src, {method: "HEAD"})).ok ? src : null; }
+      catch { return null; }
+    })
+  )).filter(Boolean);
+
+  if (encontradas.length) document.getElementById("portada").src = encontradas[0];
+  document.getElementById("gal").innerHTML = encontradas
+    .map((s, i) => `<img src="${s}" alt="Foto ${i + 1}" loading="lazy" decoding="async">`).join("");
+
+  const lb = document.getElementById("lb"), li = lb.querySelector("img");
+  document.getElementById("gal").onclick = e => {
+    if (e.target.tagName === "IMG") { li.src = e.target.src; lb.classList.add("on"); }
+  };
+  lb.onclick = () => lb.classList.remove("on");
+  addEventListener("keydown", e => { if (e.key === "Escape") lb.classList.remove("on"); });
+  document.querySelectorAll("img").forEach(im =>
+    im.addEventListener("error", () => im.style.visibility = "hidden"));
+})();
 </script>
 
 </body>
