@@ -280,7 +280,7 @@
           <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:38px;font-weight:600;color:#FFFFFF;line-height:1.15;margin-bottom:16px">Vitacura,<br>Región Metropolitana</div>
           <p style="margin:0;font-size:13px;line-height:1.8;color:#B8B2AC;text-wrap:pretty">Las oportunidades bajo tasación no esperan. Coordina tu visita o una asesoría por WhatsApp.</p>
         </div>
-        <div style="height:280px;overflow:hidden"><img src="lc_20.jpg" alt="Sector" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+        <div style="height:280px;overflow:hidden"><img src="lc_12.jpg" alt="Sector" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
       </div>
       <div style="margin-top:90px;border-top:2px solid #E8440A;padding-top:36px">
         <img src="logo-tuai-blanco.png" alt="TuAI" style="height:110px;width:auto;display:block">
@@ -293,6 +293,15 @@
   </section>
 </div>
 </x-dc>
+<script>
+// Red de seguridad: oculta cualquier imagen que no exista (evita iconos rotos)
+addEventListener('load', () => {
+  document.querySelectorAll('img').forEach(i => {
+    i.addEventListener('error', () => { i.style.visibility = 'hidden'; });
+    if (i.complete && i.naturalWidth === 0) i.style.visibility = 'hidden';
+  });
+});
+</script>
 <script type="text/x-dc" data-dc-script data-props="{
   &quot;telefono&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;+ 56 99 8383 991&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Contacto&quot; },
   &quot;correo&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;tuasesoriainmobiliariacl@gmail.com&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Contacto&quot; },
@@ -302,8 +311,8 @@ class Component extends DCLogic {
   state = { i1: 0, i2: 0, menuOpen: false };
   renderVals() {
     // FOTOS: en la RAIZ del repositorio, formato sb_01.jpg / lc_01.jpg (20 cada una)
-    const gal1 = Array.from({ length: 20 }, (_, k) => 'sb_' + String(k + 1).padStart(2, '0') + '.jpg');
-    const gal2 = Array.from({ length: 20 }, (_, k) => 'lc_' + String(k + 1).padStart(2, '0') + '.jpg');
+    const gal1 = Array.from({ length: 11 }, (_, k) => 'sb_' + String(k + 1).padStart(2, '0') + '.jpg');
+    const gal2 = Array.from({ length: 12 }, (_, k) => 'lc_' + String(k + 1).padStart(2, '0') + '.jpg');
     const i1 = ((this.state.i1 % gal1.length) + gal1.length) % gal1.length;
     const i2 = ((this.state.i2 % gal2.length) + gal2.length) % gal2.length;
     const carousel = {
