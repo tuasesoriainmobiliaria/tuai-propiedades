@@ -1,160 +1,183 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Departamento San Bernardo 84 m² · 4 dormitorios · TuAI</title>
-<meta name="description" content="Departamento remodelado en San Bernardo. 84 m2, 4 dormitorios, 2 banos y terraza de 10 m2. $109.000.000. Fotos, video e informacion completa.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Departamento San Bernardo — TuAI</title>
+<meta name="description" content="Departamento remodelado en San Bernardo, 84 m², 4 dormitorios, 2 baños. $109.000.000, bajo tasación bancaria. TuAI — Tu Asesoría Inmobiliaria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital@1&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital@1&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--n:#E8440A;--b:#fff;--b2:#F7F6F5;--t:#333;--g:#767676;--l:#DEDBD8}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--b);color:var(--t);font:400 16px/1.6 Poppins,system-ui,sans-serif}
-img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-h1,h2,.spec b{font-family:'Bebas Neue',Impact,sans-serif;letter-spacing:2px;font-weight:400}
-em,.emo,.ss,.loc{font-family:Lora,Georgia,serif;font-style:italic}
-nav{position:sticky;top:0;z-index:50;background:#fffffff2;border-bottom:1px solid var(--l);
-display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
-.logo img{height:38px;width:auto}
-.logo span{display:block;color:var(--t);font-size:.6rem;letter-spacing:2px;margin-top:3px}
-.hero{position:relative}
-.hero>img{width:100%;height:min(58vh,460px);object-fit:cover;background:var(--b2)}
-.cap{padding:20px}
-.hero h1{font-size:clamp(1.7rem,6vw,3rem);line-height:1.05}
-.hero h1 em{color:var(--n);font-style:normal;font-family:inherit}
-.loc{color:var(--g);font-size:.95rem}
-.precio{display:inline-block;background:var(--n);color:#fff;font-weight:600;padding:7px 18px;border-radius:30px;margin-top:8px}
-main{max-width:1100px;margin:0 auto;padding:0 20px}
-.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:1px;background:var(--l);
-border:1px solid var(--l);border-radius:12px;overflow:hidden;margin:18px 0}
-.spec{background:var(--b2);text-align:center;padding:14px 6px}
-.spec b{display:block;font-size:1.45rem;color:var(--n)}
-.spec small{font-size:.72rem;color:var(--g)}
-section{padding:36px 0}
-h2{font-size:clamp(1.5rem,4vw,2.1rem)}
-h2 em{color:var(--n);font-style:normal;font-family:inherit}
-.ss{color:var(--g);margin-bottom:20px}
-.video{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--l)}
-.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px}
-.gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;cursor:pointer;background:var(--b2)}
-.desc{max-width:720px}
-.emo{color:var(--n);font-size:1.1rem;margin-bottom:12px}
-ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-top:20px}
-li{background:var(--b2);border:1px solid var(--l);border-radius:9px;padding:10px 13px;font-size:.9rem}
-li::before{content:"\2726 ";color:var(--n)}
-.cta{text-align:center;background:var(--b2);border:1px solid var(--l);border-radius:18px;padding:40px 20px}
-.btn{display:inline-block;background:var(--n);color:#fff;font-weight:600;padding:13px 28px;border-radius:40px;margin-top:14px}
-footer{text-align:center;padding:26px 20px;font-size:.8rem;color:#969696;border-top:1px solid var(--l)}
-footer img{height:44px;width:auto;margin:0 auto 12px}
-footer b{color:var(--n)}
-.wa{position:fixed;bottom:18px;right:18px;z-index:60;width:52px;height:52px;border-radius:50%;background:#25D366;
-display:grid;place-items:center;box-shadow:0 6px 18px #3333334d}
-.wa svg{width:28px;fill:#fff}
-#lb{position:fixed;inset:0;z-index:99;background:#000000f0;display:none;place-items:center}
-#lb.on{display:grid}
-#lb img{max-width:94vw;max-height:86vh;border-radius:6px}
-#lb b{position:absolute;top:10px;right:18px;font-size:2.2rem;color:var(--n);cursor:pointer;font-weight:400}
-@media(max-width:600px){
-  .hero>img{height:44vh}
-  .gal{grid-template-columns:1fr 1fr;gap:6px}
-  section{padding:28px 0}
-}
+  :root{--gold:#F54F1E;--gold-dk:#D63E10;--ink:#14181F;--ink2:#1C222B;--gray1:#333;--gray2:#555;--gray3:#767676;--gray4:#969696;--line:#DEDBD8;--cream:#F5F1EA}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#fff;color:var(--gray2);font-family:'Poppins',sans-serif;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:var(--gold-dk);text-decoration:none}a:hover{color:var(--gold)}
+  h1,h2,h3,.bebas{font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:.5px}
+  .quote{font-family:'Lora',serif;font-style:italic}
+  ::selection{background:var(--gold);color:var(--ink)}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+  .kicker{font-size:12px;letter-spacing:4px;color:var(--gold-dk);font-weight:600;text-transform:uppercase}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 30px;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border:0}
+  .btn-gold{background:var(--gold);color:var(--ink)!important}.btn-gold:hover{background:var(--gold-dk);color:#fff!important}
+  header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(20px,5vw,56px)}
+  .brand{display:flex;align-items:center;gap:12px}.brand img{height:42px}
+  .brand span{font-size:10px;font-weight:600;letter-spacing:2.5px;color:var(--gold-dk);white-space:nowrap}
+  .nav .back{font-size:13px;font-weight:500;letter-spacing:1px;color:var(--gray1);text-transform:uppercase}
+  .hero{position:relative;height:clamp(360px,60vh,620px);background:var(--ink);overflow:hidden}
+  .hero img{width:100%;height:100%;object-fit:cover}
+  .hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,24,31,.35),rgba(20,24,31,.15) 40%,rgba(20,24,31,.85))}
+  .hero .cap{position:absolute;left:0;right:0;bottom:0;padding:0 0 clamp(28px,5vw,52px)}
+  .hero .cap .kicker{color:var(--gold)}
+  .hero h1{color:#fff;font-size:clamp(34px,6vw,62px);line-height:.98;margin:12px 0 14px;text-transform:uppercase;max-width:900px}
+  .hero h1 i{color:var(--gold);font-style:normal}
+  .hero .price{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,4vw,42px);color:#fff;letter-spacing:1px}
+  .hero .tas{font-size:13px;color:#D8DCE2;margin-top:2px}.hero .tas s{opacity:.8}
+  .stats{background:var(--ink2);color:#fff}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:40px;padding-bottom:40px}
+  .stats .s{text-align:center}
+  .stats .s b{display:block;font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6vw,64px);color:var(--gold);line-height:1}
+  .stats .s span{font-size:11px;letter-spacing:2px;color:#B8BEC8;text-transform:uppercase}
+  .sec{padding:clamp(56px,8vw,90px) 0}
+  .sec h2{font-size:clamp(30px,4.5vw,46px);color:var(--gray1);margin:12px 0 8px;text-transform:uppercase}
+  .sec h2 i{color:var(--gold-dk);font-style:normal}
+  .sub{font-size:14px;color:var(--gray3);margin:0 0 34px}
+  .vid{position:relative;aspect-ratio:16/9;background:var(--ink);overflow:hidden}
+  .vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .gal img{width:100%;aspect-ratio:1/1;object-fit:cover;cursor:pointer;transition:transform .3s,filter .3s;background:var(--ink)}
+  .gal img:hover{transform:scale(1.02);filter:brightness(1.05)}
+  .about{background:var(--cream)}
+  .about .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:52px;align-items:start}
+  .about .q{font-family:'Lora',serif;font-style:italic;font-size:clamp(22px,3vw,30px);color:var(--gray1);line-height:1.4;margin:0 0 22px}
+  .about p{font-size:14.5px;line-height:1.85;margin:0 0 20px}
+  .about .feat{display:flex;flex-direction:column;gap:14px;background:#fff;border:1px solid var(--line);padding:30px}
+  .about .feat .h{font-size:11px;letter-spacing:3px;color:var(--gold-dk);font-weight:600;text-transform:uppercase;margin-bottom:4px}
+  .about .feat div.f{display:flex;gap:10px;font-size:13.5px;color:var(--gray2)}
+  .about .feat i{color:var(--gold-dk);font-style:normal;font-weight:700}
+  .cta{background:var(--ink);color:#fff;text-align:center}
+  .cta h2{color:#fff;font-size:clamp(34px,5vw,52px);margin:0 0 12px}
+  .cta h2 i{color:var(--gold);font-style:normal}
+  .cta p{font-size:15px;color:#B8BEC8;margin:0 0 28px}
+  footer{background:var(--ink);color:var(--gray4);border-top:1px solid rgba(255,255,255,.12)}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:34px;padding-bottom:34px;flex-wrap:wrap}
+  footer .logo-badge img{height:60px;width:auto;display:block}
+  footer .c{font-size:12px;line-height:1.9}footer .c a{color:#fff}
+  .float-wa{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(0,0,0,.28);z-index:200}
+  .float-wa:hover{background:#1ebe5a;color:#fff}
+  .lb{position:fixed;inset:0;background:rgba(10,12,16,.94);display:none;align-items:center;justify-content:center;z-index:300;padding:24px}
+  .lb.open{display:flex}
+  .lb img{max-width:92vw;max-height:88vh;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+  .lb .x{position:absolute;top:18px;right:24px;color:#fff;font-size:34px;cursor:pointer;line-height:1}
+  .lb .a{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:40px;cursor:pointer;user-select:none;padding:0 18px;opacity:.8}
+  .lb .a:hover{opacity:1}.lb .lp{left:6px}.lb .ln{right:6px}
+  @media(max-width:820px){
+    .brand span{display:none}
+    .stats .wrap{grid-template-columns:repeat(2,1fr);gap:28px 20px}
+    .gal{grid-template-columns:repeat(2,1fr)}
+    .about .grid{grid-template-columns:1fr;gap:30px}
+  }
 </style>
 </head>
 <body>
-
-<nav>
-  <a href="index.html" class="logo"><img src="logo-tuai.png" alt="TuAI"><span>TU ASESORÍA INMOBILIARIA</span></a>
-  <a href="index.html">← Inicio</a>
-</nav>
-
-<header class="hero">
-  <img id="portada" alt="Departamento San Bernardo 84 m² · 4 dormitorios" fetchpriority="high">
-  <div class="cap">
-    <p class="loc">San Bernardo · Departamento remodelado</p>
-    <h1>DEPARTAMENTO <em>REMODELADO</em><br>84 M² · 4 DORMITORIOS</h1>
-    <span class="precio">$109.000.000 <s style="opacity:.6;font-weight:400;font-size:.85em">$138.000.000</s></span>
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html"><img src="logo-tuai.png" alt="TuAI" onerror="this.style.display='none'"><span>TU ASESORÍA INMOBILIARIA</span></a>
+    <a class="back" href="index.html">← Inicio</a>
   </div>
 </header>
 
-<main>
-  <div class="specs">
-    <div class="spec"><b>84</b><small>M² TOTALES</small></div>
-    <div class="spec"><b>4</b><small>DORMITORIOS</small></div>
-    <div class="spec"><b>2</b><small>BAÑOS</small></div>
-    <div class="spec"><b>10</b><small>M² TERRAZA</small></div>
+<section class="hero">
+  <img id="heroImg" src="sb_01.jpg" alt="Departamento San Bernardo" onerror="this.style.display='none'">
+  <div class="veil"></div>
+  <div class="cap"><div class="wrap">
+    <div class="kicker">EN VENTA · BAJO TASACIÓN</div>
+    <h1>Departamento <i>Remodelado</i> — 84 m² · 4 Dormitorios</h1>
+    <div class="price">$109.000.000</div>
+    <div class="tas">Tasación bancaria: <s>$138.000.000</s></div>
+  </div></div>
+</section>
+
+<section class="stats"><div class="wrap">
+  <div class="s"><b>84</b><span>M² totales</span></div>
+  <div class="s"><b>4</b><span>Dormitorios</span></div>
+  <div class="s"><b>2</b><span>Baños</span></div>
+  <div class="s"><b>10</b><span>M² terraza</span></div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <div class="kicker">Recorrido</div>
+  <h2>Video <i>Tour</i></h2>
+  <p class="sub">Recorre la propiedad como si ya estuvieras ahí.</p>
+  <div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/3r4ZDG9gY5k" title="Video tour Departamento San Bernardo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+</div></section>
+
+<section class="sec about" style="padding-top:0"><div class="wrap grid">
+  <div>
+    <div class="kicker">Sobre esta propiedad</div>
+    <h2 style="margin-bottom:20px">Sobre esta <i>Propiedad</i></h2>
+    <p class="q">“Cuatro dormitorios para que cada uno tenga su espacio, y una terraza para reunirlos a todos.”</p>
+    <p>Departamento completamente remodelado en condominio cerrado con seguridad y áreas verdes, a pasos de colegios, comercio y centros de salud. 84 m² bien pensados, con cocina cerrada independiente con logia y una terraza cerrada de 10 m² integrada al living, con orientación oriente–poniente. No paga contribuciones y su gasto común es de $78.000.</p>
   </div>
+  <div class="feat">
+    <div class="h">Características destacadas</div>
+    <div class="f"><i>✓</i><span>Ventanales termopanel — menos frío, menos ruido, menos gasto en calefacción</span></div>
+    <div class="f"><i>✓</i><span>Cocina cerrada con logia — living limpio y ordenado</span></div>
+    <div class="f"><i>✓</i><span>Condominio cerrado con seguridad y áreas verdes</span></div>
+    <div class="f"><i>✓</i><span>No paga contribuciones — ahorro directo cada año</span></div>
+    <div class="f"><i>✓</i><span>Gasto común: $78.000</span></div>
+  </div>
+</div></section>
 
-  <section>
-    <h2>VIDEO <em>TOUR</em></h2>
-    <p class="ss">Recorre la propiedad como si ya estuvieras ahí.</p>
-    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/3r4ZDG9gY5k" title="Video tour" loading="lazy" allowfullscreen></iframe></div>
-  </section>
+<section class="sec"><div class="wrap">
+  <div class="kicker">Fotos</div>
+  <h2>Galería de <i>Fotos</i></h2>
+  <p class="sub">Toca una foto para verla en grande.</p>
+  <div class="gal" id="gal"></div>
+</div></section>
 
-  <section>
-    <h2>GALERÍA DE <em>FOTOS</em></h2>
-    <p class="ss">Toca una foto para verla en grande.</p>
-    <div class="gal" id="gal"></div>
-  </section>
+<section class="sec cta"><div class="wrap">
+  <h2>¿Quieres <i>Visitarla</i>?</h2>
+  <p>Coordina tu visita hoy — te respondemos por WhatsApp.</p>
+  <a class="btn btn-gold" id="ctaWa" target="_blank" rel="noopener">Agenda tu visita →</a>
+</div></section>
 
-  <section class="desc">
-    <h2>SOBRE ESTA <em>PROPIEDAD</em></h2>
-    <p class="emo">"Cuatro dormitorios para que cada uno tenga su espacio, y una terraza para reunirlos a todos."</p>
-    <p>Departamento completamente remodelado de 84 m² en San Bernardo, con 4 dormitorios y 2 baños. Incluye una terraza de 10 m² integrada al living. Una oportunidad real: su precio bajó de $138.000.000 a <strong>$109.000.000</strong>.</p>
-    <ul><li>Departamento remodelado</li><li>84 m² totales</li><li>4 dormitorios</li><li>2 baños</li><li>Terraza de 10 m²</li><li>Precio rebajado: $109.000.000</li></ul>
-  </section>
+<footer><div class="wrap">
+  <div class="logo-badge"><img src="logo-tuai-dark.png" alt="TuAI — Tu Asesoría Inmobiliaria" onerror="this.style.display='none'"></div>
+  <div class="c">
+    <a id="fWa" target="_blank" rel="noopener">+ 56 99 8383 991</a><br>
+    <a href="mailto:hola@tuai.cl">hola@tuai.cl</a><br>
+    Vitacura, Región Metropolitana
+  </div>
+</div></footer>
 
-  <section>
-    <div class="cta">
-      <h2>¿QUIERES <em style="color:var(--n)">VISITARLA</em>?</h2>
-      <p class="ss">Agenda tu visita hoy.</p>
-      <a class="btn" href="https://wa.me/56998383991?text=Hola%2C%20me%20interesa%20el%20departamento%20de%20San%20Bernardo" target="_blank" rel="noopener">Agendar por WhatsApp</a>
-    </div>
-  </section>
-</main>
+<a class="float-wa" id="floatWa" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></a>
 
-<footer>
-  <img src="logo-tuai.png" alt="TuAI">
-  © 2026 <b>Tu Asesoría Inmobiliaria</b><br>
-  WhatsApp +56 9 9838 3991 · tuasesoriainmobiliariacl@gmail.com
-</footer>
-
-<a class="wa" href="https://wa.me/56998383991" target="_blank" rel="noopener" aria-label="WhatsApp">
-<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z"/></svg></a>
-
-<div id="lb"><b>&times;</b><img alt=""></div>
+<div class="lb" id="lb"><span class="x" id="lbX">×</span><span class="a lp" id="lbP">‹</span><img id="lbImg" src="" alt=""><span class="a ln" id="lbN">›</span></div>
 
 <script>
-/* Las fotos se detectan solas: sube sb_01.jpg, sb_02.jpg... y aparecen.
-   No hay que indicar cuántas son ni tocar este código nunca. */
-const PREF = "sb", TOPE = 40;
-
-(async function () {
-  const encontradas = (await Promise.all(
-    Array.from({length: TOPE}, (_, k) => k + 1).map(async n => {
-      const src = PREF + "_" + String(n).padStart(2, "0") + ".jpg";
-      try { return (await fetch(src, {method: "HEAD"})).ok ? src : null; }
-      catch { return null; }
-    })
-  )).filter(Boolean);
-
-  if (encontradas.length) document.getElementById("portada").src = encontradas[0];
-  document.getElementById("gal").innerHTML = encontradas
-    .map((s, i) => `<img src="${s}" alt="Foto ${i + 1}" loading="lazy" decoding="async">`).join("");
-
-  const lb = document.getElementById("lb"), li = lb.querySelector("img");
-  document.getElementById("gal").onclick = e => {
-    if (e.target.tagName === "IMG") { li.src = e.target.src; lb.classList.add("on"); }
-  };
-  lb.onclick = () => lb.classList.remove("on");
-  addEventListener("keydown", e => { if (e.key === "Escape") lb.classList.remove("on"); });
-  document.querySelectorAll("img").forEach(im =>
-    im.addEventListener("error", () => im.style.visibility = "hidden"));
-})();
+var WA="56998383991", MSG="Hola, me interesa el departamento de San Bernardo";
+var wa="https://wa.me/"+WA+"?text="+encodeURIComponent(MSG);
+document.getElementById("ctaWa").href=wa;
+document.getElementById("floatWa").href=wa;
+document.getElementById("fWa").href="https://wa.me/"+WA;
+function detect(prefix,cap){cap=cap||40;return new Promise(function(res){var f=[],i=1;function s(){if(i>cap)return res(f);var n=prefix+(i<10?"0"+i:""+i)+".jpg";var im=new Image();im.onload=function(){f.push(n);i++;s();};im.onerror=function(){res(f);};im.src=n;}s();});}
+var photos=[],cur=0;
+var gal=document.getElementById("gal"),lb=document.getElementById("lb"),lbImg=document.getElementById("lbImg");
+function openLb(k){cur=(k%photos.length+photos.length)%photos.length;lbImg.src=photos[cur];lb.classList.add("open");}
+document.getElementById("lbX").onclick=function(){lb.classList.remove("open");};
+lb.onclick=function(e){if(e.target===lb)lb.classList.remove("open");};
+document.getElementById("lbP").onclick=function(e){e.stopPropagation();openLb(cur-1);};
+document.getElementById("lbN").onclick=function(e){e.stopPropagation();openLb(cur+1);};
+document.addEventListener("keydown",function(e){if(!lb.classList.contains("open"))return;if(e.key==="Escape")lb.classList.remove("open");if(e.key==="ArrowLeft")openLb(cur-1);if(e.key==="ArrowRight")openLb(cur+1);});
+detect("sb_").then(function(list){
+  photos=list;
+  if(!list.length){document.getElementById("gal").parentElement.parentElement.style.display="none";return;}
+  document.getElementById("heroImg").src=list[0];
+  list.forEach(function(src,k){var im=new Image();im.src=src;im.alt="Departamento San Bernardo"+" foto "+(k+1);im.loading="lazy";im.onerror=function(){this.style.display='none';};im.addEventListener("click",function(){openLb(k);});gal.appendChild(im);});
+});
 </script>
-
 </body>
 </html>

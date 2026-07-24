@@ -2,263 +2,358 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TuAI — Tu Asesoría Inmobiliaria</title>
-<meta name="description" content="Tu Asesoría Inmobiliaria. Compra, venta, arriendo y administración de propiedades en Santiago. Propiedades destacadas con fotos, video e información completa.">
+<meta name="description" content="TuAI, Tu Asesoría Inmobiliaria en Santiago de Chile. Venta, arriendo y administración de propiedades con asesoría profesional de principio a fin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600;700&family=Lora:ital@1&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--nar:#E8440A;--nar2:#C23708;--osc:#1C1917;--crema:#F4EFE9;--t:#333;--t2:#555;--g:#767676;--l:#DEDBD8}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#fff;color:var(--t2);font:400 16px/1.6 Helvetica,Arial,sans-serif}
-img{display:block;max-width:100%}
-a{color:var(--nar);text-decoration:none}
-h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;color:var(--t)}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-.epi{font-size:11px;letter-spacing:4px;color:var(--nar);font-weight:bold;margin-bottom:14px}
+  :root{
+    --gold:#F54F1E; --gold-dk:#D63E10;
+    --ink:#14181F; --ink2:#1C222B;
+    --gray1:#333333; --gray2:#555555; --gray3:#767676; --gray4:#969696;
+    --line:#DEDBD8; --cream:#F5F1EA; --white:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#fff;color:var(--gray2);font-family:'Poppins',sans-serif;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:var(--gold-dk);text-decoration:none}
+  a:hover{color:var(--gold)}
+  h1,h2,h3,.bebas{font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:.5px}
+  .quote{font-family:'Lora',serif;font-style:italic}
+  ::selection{background:var(--gold);color:var(--ink)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+  .kicker{font-size:12px;letter-spacing:4px;color:var(--gold-dk);font-weight:600;text-transform:uppercase}
 
-/* NAV */
-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--l)}
-.nav{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.marca{display:flex;align-items:center;gap:12px}
-.marca img{height:44px;width:auto}
-.marca span{font-size:10px;font-weight:bold;letter-spacing:2.5px;color:var(--nar);line-height:1.3}
-.menu{display:flex;align-items:center;gap:28px;font-size:13px;letter-spacing:1px}
-.menu>a{color:var(--t)}
-.menu>a:hover{color:var(--nar)}
-.drop{position:relative}
-.drop>button{background:none;border:0;font:inherit;letter-spacing:1px;color:var(--t);cursor:pointer;display:flex;align-items:center;gap:6px}
-.drop>button:hover{color:var(--nar)}
-.drop-menu{position:absolute;top:calc(100% + 14px);left:-18px;width:300px;background:#fff;border:1px solid var(--l);box-shadow:0 18px 40px rgba(0,0,0,.12);display:none}
-.drop-menu::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
-.drop:hover .drop-menu,.drop.abierto .drop-menu{display:block}
-.drop-menu a{display:block;padding:14px 18px;border-bottom:1px solid var(--l);color:var(--t)}
-.drop-menu a:hover{background:var(--crema)}
-.drop-menu a b{display:block;font-size:13px;color:var(--t)}
-.drop-menu a small{font-size:11.5px;color:var(--g)}
-.drop-menu .todas{color:var(--nar);font-size:11.5px;font-weight:bold;letter-spacing:1.5px;border:0}
-.wsp{display:flex;align-items:center;gap:8px;background:var(--nar);color:#fff!important;padding:10px 20px;border-radius:999px;font-weight:bold;font-size:13px}
-.wsp:hover{background:var(--nar2)}
-.burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:6px}
-.burger i{display:block;width:24px;height:2px;background:var(--nar)}
+  /* HEADER */
+  header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px clamp(20px,5vw,64px)}
+  .brand{display:flex;align-items:center;gap:12px;min-width:0}
+  .brand img{height:44px;width:auto}
+  .brand span{font-size:10px;font-weight:600;letter-spacing:2.5px;color:var(--gold-dk);white-space:nowrap}
+  .menu{display:flex;align-items:center;gap:30px;font-size:13px;letter-spacing:1px;font-weight:500}
+  .menu a{color:var(--gray1);text-transform:uppercase}
+  .menu a:hover{color:var(--gold-dk)}
+  .drop{position:relative}
+  .drop>span{color:var(--gray1);display:inline-flex;align-items:center;gap:6px;cursor:pointer;text-transform:uppercase}
+  .drop>span .car{font-size:8px;color:var(--gray3)}
+  .drop-panel{position:absolute;top:100%;left:-18px;padding-top:16px;display:none}
+  .drop:hover .drop-panel,.drop.open .drop-panel{display:block}
+  .drop-inner{width:300px;background:#fff;border:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.12)}
+  .drop-inner a{display:block;padding:14px 20px;border-bottom:1px solid var(--line);color:var(--gray1);text-transform:none;letter-spacing:0}
+  .drop-inner a:hover{background:var(--cream)}
+  .drop-inner a b{display:block;font-size:13px;color:var(--gray1);font-weight:600}
+  .drop-inner a small{display:block;font-size:11.5px;color:var(--gray3);margin-top:3px}
+  .drop-all{padding:13px 20px!important;font-size:11.5px!important;font-weight:600;letter-spacing:1.5px!important;color:var(--gold-dk)!important;text-transform:uppercase}
+  .wa-btn{display:inline-flex;align-items:center;gap:9px;background:var(--gold);color:var(--ink)!important;padding:10px 20px;border-radius:999px;font-weight:600;font-size:13px;white-space:nowrap}
+  .wa-btn:hover{background:var(--gold-dk);color:#fff!important}
+  .hamb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+  .hamb span{width:24px;height:2px;background:var(--gray1)}
 
-/* HERO */
-.hero{background:var(--osc);color:#fff;padding:70px 0}
-.hero .wrap{display:grid;grid-template-columns:1fr 440px;gap:56px;align-items:center}
-.hero .epi{color:#FFB499}
-.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.1;color:#fff;margin-bottom:18px}
-.hero p{color:#B8B2AC;max-width:520px;margin-bottom:26px}
-.hero-img{height:440px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.5);background:#2a2622}
-.hero-img img{width:100%;height:100%;object-fit:cover}
-.btn{display:inline-block;background:var(--nar);color:#fff!important;padding:14px 30px;font-size:13px;font-weight:bold;letter-spacing:2px}
-.btn:hover{background:var(--nar2)}
-.btn.linea{background:none;border:1px solid rgba(244,239,233,.4)}
-.btn.linea:hover{background:none;border-color:var(--nar);color:var(--nar)!important}
-.btn.osc{background:var(--t)}
-.btn.osc:hover{background:var(--nar)}
-.botones{display:flex;gap:12px;flex-wrap:wrap}
+  /* HERO */
+  .hero{background:var(--ink);color:#fff;padding:clamp(48px,7vw,80px) 0}
+  .hero-grid{display:grid;grid-template-columns:1fr 460px;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(40px,6vw,68px);line-height:.98;color:#fff;margin:14px 0 18px;text-transform:uppercase}
+  .hero p{font-size:16px;line-height:1.65;color:#B8BEC8;max-width:520px;margin:0 0 28px}
+  .hero .cta-row{display:flex;flex-wrap:wrap;gap:14px}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 30px;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;font-family:'Poppins',sans-serif;cursor:pointer;border:0}
+  .btn-gold{background:var(--gold);color:var(--ink)!important}.btn-gold:hover{background:var(--gold-dk);color:#fff!important}
+  .btn-ghost{border:1px solid rgba(255,255,255,.4);color:#fff!important;background:transparent}.btn-ghost:hover{border-color:var(--gold);color:var(--gold)!important}
+  .btn-dark{background:var(--ink);color:#fff!important}.btn-dark:hover{background:var(--gold-dk)}
+  .hero-img{height:480px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.5);background:var(--ink2)}
+  .hero-img img{width:100%;height:100%;object-fit:cover}
+  .ribbon{font-size:11px;letter-spacing:2px;color:var(--gray4);text-align:right;margin-top:22px}
 
-/* PROPIEDADES */
-.sec{padding:80px 0}
-.sec.crema{background:var(--crema)}
-.titulo-sec{text-align:center;margin-bottom:48px}
-.titulo-sec h2{font-size:clamp(28px,4vw,42px)}
-.prop{display:grid;grid-template-columns:300px 1fr 250px;gap:40px;align-items:center}
-.prop+.prop{margin-top:0;padding-top:64px;border-top:1px solid var(--l)}
-.prop.invertida{grid-template-columns:250px 1fr 300px}
-.badge{display:inline-block;background:var(--nar);color:#fff;font-size:10.5px;font-weight:bold;letter-spacing:2px;padding:6px 12px;margin-bottom:16px}
-.badge.osc{background:var(--t)}
-.prop h3{font-size:clamp(22px,3vw,32px);margin-bottom:14px}
-.prop .resumen{font-size:13px;line-height:1.75;margin-bottom:18px}
-.precio{font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;font-weight:600;color:var(--t)}
-.antes{font-size:12px;color:var(--g);margin:4px 0 20px}
-.antes s{text-decoration:line-through}
-.detalles{display:flex;flex-direction:column;gap:18px}
-.detalles b{display:flex;align-items:baseline;gap:8px;font-size:13.5px;color:var(--t)}
-.detalles span{display:block;font-size:12.5px;color:var(--g);margin:4px 0 0 26px}
+  /* HISTORIA (carta escrita a mano) */
+  .historia{background:#efeae2}
+  .historia .h-grid{display:grid;grid-template-columns:1.05fr .95fr}
+  .historia .h-ph{position:relative;min-height:620px;background:#000}
+  .historia .h-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%}
+  .historia .h-note{padding:clamp(40px,5vw,60px) clamp(28px,5vw,58px);display:flex;flex-direction:column;justify-content:center;background:radial-gradient(circle at 100% 0,rgba(245,79,30,.06),transparent 60%),#F7F3EC}
+  .historia .h-k{font-size:12px;letter-spacing:4px;color:var(--gold-dk);font-weight:600;text-transform:uppercase;margin-bottom:24px}
+  .historia .h-hand{font-family:'Dancing Script',cursive;font-size:clamp(21px,2.3vw,25px);line-height:1.5;color:var(--gray1)}
+  .historia .h-hand .key{color:var(--gold-dk);font-weight:700;font-size:clamp(30px,3.4vw,36px);display:inline-block;margin-right:4px}
+  .historia .h-rule{width:58px;height:2px;background:var(--gold);margin:24px 0 22px}
+  .historia .h-close{font-family:'Lora',serif;font-style:italic;font-weight:500;font-size:clamp(24px,2.7vw,32px);line-height:1.3;color:var(--gray1)}
+  .historia .h-brand{margin-top:14px;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dk);font-weight:600}
 
-/* CARRUSEL */
-.carrusel{min-width:0}
-.marco{position:relative;height:380px;overflow:hidden;background:var(--osc)}
-.marco img{width:100%;height:100%;object-fit:cover}
-.flecha{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.92);border:0;cursor:pointer;font-size:18px;color:var(--t);display:grid;place-items:center}
-.flecha:hover{background:var(--nar);color:#fff}
-.flecha.izq{left:12px}.flecha.der{right:12px}
-.contador{position:absolute;right:14px;bottom:12px;background:rgba(28,25,23,.75);color:#fff;font-size:11px;letter-spacing:1px;padding:5px 10px}
-.minis{display:flex;gap:8px;margin-top:10px;overflow-x:auto;padding-bottom:4px}
-.minis img{width:64px;height:48px;object-fit:cover;cursor:pointer;flex-shrink:0;border:2px solid transparent}
-.minis img.on{border-color:var(--nar)}
+  /* SECTION HEAD */
+  .sec{padding:clamp(64px,9vw,96px) 0}
+  .sec-head{text-align:center;margin-bottom:56px}
+  .sec-head h2{font-size:clamp(34px,5vw,46px);color:var(--gray1);margin:14px 0 0}
 
-/* SERVICIOS */
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.tarjeta{border:1px solid var(--l);padding:32px 28px}
-.tarjeta:hover{border-color:var(--nar)}
-.tarjeta .num{font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;color:var(--nar);font-weight:600;margin-bottom:12px}
-.tarjeta b{display:block;font-size:17px;color:var(--t);margin-bottom:10px}
-.tarjeta p{font-size:13.5px;line-height:1.7}
+  /* PROPERTY CARDS */
+  #cards{display:flex;flex-direction:column;gap:72px}
+  .card{display:grid;grid-template-columns:320px 460px 1fr;gap:44px;align-items:center;justify-content:center}
+  .card .card-media{order:2}
+  .card .card-body{order:1}
+  .card .card-specs{order:3}
+  .card.rev .card-body{order:3}
+  .card.rev .card-specs{order:1}
+  .badge{display:inline-block;background:var(--ink);color:#fff;font-size:10.5px;font-weight:600;letter-spacing:2px;padding:6px 12px;text-transform:uppercase}
+  .badge.sale{background:var(--gold);color:var(--ink)}
+  .card h3{font-size:clamp(26px,3.4vw,34px);color:var(--gray1);margin:16px 0 12px;text-transform:uppercase;line-height:1}
+  .card .desc{font-size:13.5px;line-height:1.75;color:var(--gray2);margin:0 0 18px}
+  .price{font-family:'Bebas Neue',sans-serif;font-size:34px;color:var(--gray1);letter-spacing:1px}
+  .tas{font-size:12.5px;color:var(--gray3);margin:2px 0 18px}
+  .tas s{opacity:.8}
+  .stats{display:flex;flex-wrap:wrap;gap:22px;margin:0 0 24px}
+  .stat{display:flex;align-items:baseline;gap:7px}
+  .stat b{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--gold-dk);line-height:1}
+  .stat span{font-size:11.5px;color:var(--gray3);text-transform:uppercase;letter-spacing:1px}
+  .card-btns{display:flex;flex-wrap:wrap;gap:12px}
+  .card-specs{display:flex;flex-direction:column;gap:20px}
+  .spec{display:flex;flex-direction:column;gap:4px}
+  .spec .sl{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:var(--gray1)}
+  .spec .sl i{font-size:17px;font-style:normal;line-height:1}
+  .spec .sv{font-size:12.5px;color:var(--gray3);margin-left:26px}
+  /* carousel */
+  .carou{position:relative;background:var(--ink);overflow:hidden;aspect-ratio:4/3}
+  .carou-track{position:absolute;inset:0}
+  .carou-track img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s}
+  .carou-track img.on{opacity:1}
+  .carou .arw{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;color:var(--gray1);cursor:pointer;font-size:18px;user-select:none;z-index:3}
+  .carou .arw:hover{background:var(--gold);color:var(--ink)}
+  .carou .prev{left:12px}.carou .next{right:12px}
+  .carou .count{position:absolute;right:14px;bottom:12px;background:rgba(20,24,31,.78);color:#fff;font-size:11px;letter-spacing:1px;padding:5px 10px;z-index:3}
+  .thumbs{display:flex;gap:7px;margin-top:10px;overflow-x:auto;padding-bottom:2px}
+  .thumbs img{width:72px;height:52px;object-fit:cover;cursor:pointer;flex-shrink:0;border:2px solid transparent}
+  .thumbs img.on{border-color:var(--gold)}
 
-/* NARRATIVA + VIDEO */
-.narra{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.narra h2{font-size:clamp(24px,3.5vw,40px);margin-bottom:18px}
-.narra p{font-size:14px;line-height:1.8;margin-bottom:20px}
-.puntos{display:flex;flex-direction:column;gap:11px;font-size:13.5px}
-.puntos div{display:flex;gap:10px}
-.puntos i{color:var(--nar);font-weight:bold;font-style:normal}
-.video{position:relative;aspect-ratio:16/9;background:var(--osc);overflow:hidden}
-.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  /* SERVICIOS */
+  .serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+  .serv{border:1px solid var(--line);padding:36px 30px;transition:border-color .2s}
+  .serv:hover{border-color:var(--gold)}
+  .serv .n{font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--gold-dk);line-height:1}
+  .serv h4{font-size:17px;font-weight:600;color:var(--gray1);margin:10px 0 10px;font-family:'Poppins',sans-serif}
+  .serv p{font-size:13.5px;line-height:1.7;margin:0}
 
-/* GALERIA */
-.tira{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}
-.tira img{width:210px;height:260px;object-fit:cover;cursor:pointer}
+  /* EMOTIONAL BLOCKS */
+  .emo{display:grid;grid-template-columns:400px 1fr;gap:56px;align-items:center}
+  .emo.cream{background:var(--cream)}
+  .emo h2{font-size:clamp(30px,4vw,40px);color:var(--gray1);margin:14px 0 18px}
+  .emo p{font-size:14.5px;line-height:1.8}
+  .feat{display:flex;flex-direction:column;gap:12px;margin-top:18px;font-size:13.5px;color:var(--gray2)}
+  .feat div{display:flex;gap:10px}
+  .feat i{color:var(--gold-dk);font-style:normal;font-weight:700}
+  .feat b{color:var(--gray1)}
+  .vid{position:relative;aspect-ratio:16/9;background:var(--ink);overflow:hidden}
+  .vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
-/* CONTACTO */
-.contacto{background:var(--osc);color:var(--crema);padding:80px 0 60px}
-.contacto h2{color:#fff;font-size:clamp(30px,5vw,52px)}
-.cab-contacto{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;border-bottom:1px solid rgba(244,239,233,.25);padding-bottom:24px;margin-bottom:44px}
-.cab-contacto div{font-size:11px;letter-spacing:3px;color:#969696}
-.datos{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:44px;align-items:start}
-.dato{margin-bottom:28px}
-.dato .et{font-size:10.5px;letter-spacing:3px;color:#969696;margin-bottom:8px}
-.dato a{color:#fff;font-size:16px}
-.dato a:hover{color:var(--nar)}
-.wsp-ico{display:inline-flex;align-items:center;gap:10px}
-.wsp-ico span{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#25D366;flex-shrink:0}
-.wsp-ico svg{width:20px;fill:#fff}
-.ubica{font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;font-weight:600;color:#fff;line-height:1.15;margin-bottom:14px}
-.contacto p{font-size:13px;line-height:1.8;color:#B8B2AC}
-.pie{margin-top:70px;border-top:2px solid var(--nar);padding-top:30px}
-.pie img{height:100px;width:auto}
-.pie .legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:20px;font-size:11px;letter-spacing:2px;color:#969696}
+  /* INSTAGRAM COLLAGE */
+  .ig{padding:clamp(56px,8vw,90px) 0 clamp(72px,10vw,110px);text-align:center;overflow:hidden}
+  .ig h2{font-size:clamp(32px,4.5vw,44px);color:var(--gray1);margin:0 0 8px}
+  .ig .handle{font-size:12.5px;letter-spacing:1.5px;color:var(--gray3)}
+  .collage{position:relative;height:420px;max-width:1100px;margin:44px auto 0;display:flex;justify-content:center;align-items:center}
+  .collage a{display:block;overflow:hidden;box-shadow:0 24px 55px rgba(0,0,0,.22);transition:transform .35s,box-shadow .35s;background:var(--ink)}
+  .collage a img{width:100%;height:100%;object-fit:cover}
+  .collage a:hover{transform:translateY(-10px) scale(1.03) rotate(0deg)!important;box-shadow:0 34px 70px rgba(0,0,0,.3);z-index:9}
+  .cg0{width:210px;height:270px;transform:rotate(-6deg);z-index:1}
+  .cg1{width:200px;height:250px;margin-left:-34px;margin-top:70px;transform:rotate(4deg);z-index:2}
+  .cg2{width:250px;height:320px;margin-left:-30px;margin-top:-30px;transform:rotate(-2deg);z-index:4}
+  .cg3{width:200px;height:255px;margin-left:-30px;margin-top:64px;transform:rotate(5deg);z-index:2}
+  .cg4{width:210px;height:270px;margin-left:-34px;margin-top:-16px;transform:rotate(-5deg);z-index:1}
 
-/* FLOTANTE + LIGHTBOX */
-.flota{position:fixed;bottom:20px;right:20px;z-index:60;width:54px;height:54px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.3)}
-.flota svg{width:29px;fill:#fff}
-#lb{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.94);display:none;place-items:center}
-#lb.on{display:grid}
-#lb img{max-width:94vw;max-height:88vh}
-#lb button{position:absolute;top:12px;right:20px;background:none;border:0;color:var(--nar);font-size:40px;cursor:pointer;line-height:1}
+  /* CONTACTO */
+  .contact{background:var(--ink);color:var(--cream);padding:clamp(64px,9vw,96px) 0 72px}
+  .contact .top{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid rgba(245,241,234,.22);padding-bottom:26px;margin-bottom:52px;gap:20px;flex-wrap:wrap}
+  .contact .top h2{font-size:clamp(38px,6vw,54px);color:#fff;margin:0}
+  .contact .top h2 i{color:var(--gold);font-style:normal}
+  .contact .top .tag{font-size:11px;letter-spacing:3px;color:var(--gray4)}
+  .cgrid{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:48px;align-items:start}
+  .clabel{font-size:10.5px;letter-spacing:3px;color:var(--gray4);margin-bottom:10px;text-transform:uppercase}
+  .cblock{margin-bottom:30px}
+  .cblock a,.cbig{color:#fff}
+  .cblock a:hover{color:var(--gold)}
+  .wa-line{display:inline-flex;align-items:center;gap:12px;font-size:18px}
+  .wa-ic{width:38px;height:38px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .cbig{font-family:'Bebas Neue',sans-serif;font-size:36px;line-height:1.05;color:#fff;margin-bottom:14px}
+  .contact .loc-img{height:280px;overflow:hidden;background:var(--ink2)}
+  .contact .loc-img img{width:100%;height:100%;object-fit:cover}
+  .foot{margin-top:80px;border-top:2px solid var(--gold);padding-top:32px}
+  .foot .logo-badge img{height:80px;width:auto;display:block}
+  .foot .row{display:flex;justify-content:space-between;gap:20px;margin-top:22px;font-size:11px;letter-spacing:2px;color:var(--gray4);flex-wrap:wrap}
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  .burger{display:flex}
-  .menu{position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--l);flex-direction:column;align-items:stretch;gap:0;padding:8px 0;display:none}
-  .menu.abierto{display:flex}
-  .menu>a,.drop>button{padding:13px 24px;width:100%}
-  .drop-menu{position:static;width:auto;border:0;box-shadow:none;background:var(--crema)}
-  .wsp{margin:10px 24px;justify-content:center}
-  .hero{padding:44px 0}
-  .hero .wrap,.narra,.datos{grid-template-columns:1fr;gap:28px}
-  .hero-img{height:250px}
-  .prop,.prop.invertida{grid-template-columns:1fr;gap:22px}
-  .prop .detalles{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .marco{height:250px}
-  .grid3{grid-template-columns:1fr}
-  .sec{padding:52px 0}
-  .tira img{width:46%;height:170px}
-  .pie img{height:64px}
-  /* En móvil el orden natural: info, fotos, detalles */
-  .prop>*:nth-child(1){order:1}.prop>*:nth-child(2){order:2}.prop>*:nth-child(3){order:3}
-  .prop.invertida>.detalles{order:3}.prop.invertida>.carrusel{order:2}.prop.invertida>.info{order:1}
-}
+  /* FLOAT WA */
+  .float-wa{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(0,0,0,.28);z-index:200}
+  .float-wa:hover{background:#1ebe5a;color:#fff}
+
+  @media(max-width:1080px){ .brand span{display:none} }
+  @media(max-width:1024px){
+    .menu{position:fixed;top:73px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:0;border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .3s}
+    .menu.open{max-height:80vh;overflow:auto}
+    .menu>a,.drop{width:100%;padding:16px 24px;border-bottom:1px solid var(--line)}
+    .menu .wa-btn{margin:16px 24px}
+    .drop-panel{position:static;padding-top:12px;display:none}
+    .drop.open .drop-panel{display:block}
+    .drop-inner{width:100%;box-shadow:none;border:0}
+    .hamb{display:flex}
+    .hero-grid{grid-template-columns:1fr;gap:32px}
+    .hero-img{height:300px;order:-1}
+    .historia .h-grid{grid-template-columns:1fr}
+    .historia .h-ph{min-height:360px}
+    .card,.card.rev .card-media{grid-template-columns:1fr;order:0}
+    .card{gap:26px}
+    .card .card-media,.card .card-body,.card .card-specs{order:0}
+    .card-specs{flex-direction:row;flex-wrap:wrap;gap:18px 32px}
+    .serv-grid{grid-template-columns:1fr}
+    .emo{grid-template-columns:1fr;gap:28px}
+    .cgrid{grid-template-columns:1fr;gap:32px}
+    .collage{height:auto;flex-wrap:wrap;gap:12px}
+    .collage a{position:static!important;transform:none!important;margin:0!important;width:44%!important;height:150px!important}
+    .contact .top{flex-direction:column;align-items:flex-start}
+  }
+  @media(max-width:640px){
+    .collage a{width:47%!important}
+  }
 </style>
 </head>
 <body>
 
 <header>
   <div class="nav">
-    <a href="index.html" class="marca">
-      <img src="logo-tuai.png" alt="TuAI — Tu Asesoría Inmobiliaria">
-      <span>TU ASESORÍA<br>INMOBILIARIA</span>
+    <a class="brand" href="index.html">
+      <img src="logo-tuai.png" alt="TuAI — Tu Asesoría Inmobiliaria" onerror="this.style.display='none'">
+      <span>TU ASESORÍA INMOBILIARIA</span>
     </a>
-    <button class="burger" id="burger" aria-label="Menú"><i></i><i></i><i></i></button>
+    <div class="hamb" id="hamb"><span></span><span></span><span></span></div>
     <nav class="menu" id="menu">
       <div class="drop" id="drop">
-        <button id="dropBtn">PROPIEDADES <small>▼</small></button>
-        <div class="drop-menu" id="dropMenu"></div>
+        <span id="dropToggle">Propiedades <span class="car">▼</span></span>
+        <div class="drop-panel"><div class="drop-inner" id="dropList"></div></div>
       </div>
-      <a href="#servicios">SERVICIOS</a>
-      <a href="#galeria">GALERÍA</a>
-      <a href="#contacto">CONTACTO</a>
-      <a class="wsp" id="wspNav" target="_blank" rel="noopener"></a>
+      <a href="#servicios">Servicios</a>
+      <a href="#galeria">Galería</a>
+      <a href="#contacto">Contacto</a>
+      <a class="wa-btn" id="navWa" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+        <span id="navPhone">+ 56 99 8383 991</span>
+      </a>
     </nav>
   </div>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <div>
-      <div class="epi">TU ASESORÍA INMOBILIARIA · SANTIAGO, CHILE</div>
-      <h1>Compra, vende o arrienda con la asesoría que merece tu propiedad</h1>
-      <p id="heroTexto"></p>
-      <div class="botones">
-        <a href="#propiedades" class="btn">VER PROPIEDADES →</a>
-        <a class="btn linea" id="wspHero" target="_blank" rel="noopener">ESCRÍBENOS</a>
+<section class="historia">
+  <div class="h-grid">
+    <div class="h-ph"><img src="historia-unicornio.jpg" alt="Familia recibiendo las llaves de su nuevo hogar con TuAI"></div>
+    <div class="h-note">
+      <div class="h-k">Historias Exitosas · El hogar que estaban esperando</div>
+      <div class="h-hand">
+        <span class="key">Para mamá,</span> la tranquilidad de haber elegido bien.<br>
+        <span class="key">Para ella,</span> un nuevo mundo donde imaginar, jugar y crecer.<br>
+        <span class="key">Para nosotros,</span> la felicidad de acompañarlas.
+      </div>
+      <div class="h-rule"></div>
+      <div class="h-close">Hacemos que encontrar tu hogar sea más humano.</div>
+      <div class="h-brand">Tu Asesoría Inmobiliaria</div>
+      <div class="cta-row" style="margin-top:26px">
+        <a class="btn btn-gold" id="heroWa" target="_blank" rel="noopener">Escríbenos</a>
       </div>
     </div>
-    <div class="hero-img"><img id="heroImg" alt="Propiedad destacada"></div>
   </div>
+  <div class="wrap"><div class="ribbon" style="color:var(--gray3)">VENTAS · ARRIENDOS · ADMINISTRACIÓN · tuai.cl</div></div>
 </section>
 
-<section class="sec crema" id="propiedades">
+<section class="sec" id="propiedades">
   <div class="wrap">
-    <div class="titulo-sec">
-      <div class="epi">PROPIEDADES DESTACADAS</div>
+    <div class="sec-head">
+      <div class="kicker">Propiedades destacadas</div>
       <h2>Residencias en cartera</h2>
     </div>
-    <div id="listaProps"></div>
+    <div id="cards"></div>
   </div>
 </section>
 
-<section class="sec" id="servicios">
+<section class="sec" id="servicios" style="background:var(--cream)">
   <div class="wrap">
-    <div class="titulo-sec">
-      <div class="epi">NUESTROS SERVICIOS</div>
+    <div class="sec-head">
+      <div class="kicker">Nuestros servicios</div>
       <h2>Asesoría integral, de principio a fin</h2>
     </div>
-    <div class="grid3" id="listaServicios"></div>
+    <div class="serv-grid">
+      <div class="serv"><div class="n">01</div><h4>Venta y compra</h4><p>Tasación, estrategia de precio y acompañamiento completo en la negociación y el cierre de tu operación.</p></div>
+      <div class="serv"><div class="n">02</div><h4>Arriendo y administración</h4><p>Publicación profesional, selección rigurosa de arrendatarios y administración mensual transparente de tu propiedad.</p></div>
+      <div class="serv"><div class="n">03</div><h4>Evaluación de arrendatarios</h4><p>Informes de evaluación y recomendación con respaldo documental, para que arriendes con total confianza.</p></div>
+    </div>
   </div>
 </section>
 
-<div id="narrativas"></div>
-
-<section class="sec" id="galeria">
-  <div class="wrap">
-    <div class="titulo-sec">
-      <h2>Síguenos en Instagram</h2>
-      <a id="igLink" target="_blank" rel="noopener"></a>
+<section class="sec">
+  <div class="wrap emo">
+    <div>
+      <div class="kicker">Imagina llegar a casa así</div>
+      <h2>Espacio real para tu familia, con los números a tu favor</h2>
+      <p>4 dormitorios y 2 baños: espacio para que cada uno tenga su pieza, o para armar tu oficina o pieza de invitados. La terraza cerrada de 10 m² se convierte en lo que quieras: home office, sala de juegos o tu rincón de café con luz de mañana y de tarde.</p>
+      <div class="feat">
+        <div><i>✓</i><span><b>Ventanales termopanel</b> — menos frío, menos ruido, menos gasto en calefacción</span></div>
+        <div><i>✓</i><span><b>Cocina cerrada con logia</b> — adiós olores en el living, adiós ropa a la vista</span></div>
+        <div><i>✓</i><span><b>Condominio cerrado</b> con seguridad y áreas verdes, sin depender del auto</span></div>
+      </div>
     </div>
-    <div class="tira" id="tiraFotos"></div>
+    <div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/3r4ZDG9gY5k" title="Recorrido departamento San Bernardo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
   </div>
 </section>
 
-<section class="contacto" id="contacto">
-  <div class="wrap">
-    <div class="cab-contacto">
-      <h2>Conversemos<span style="color:var(--nar)">.</span></h2>
-      <div>TU ASESORÍA INMOBILIARIA · 2026</div>
+<section class="sec" style="background:var(--cream)">
+  <div class="wrap emo">
+    <div class="vid" style="order:-1"><iframe src="https://www.youtube-nocookie.com/embed/_5HLTQ8pT7U" title="Recorrido departamento Los Dominicos" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <div>
+      <div class="kicker">Los Dominicos · Las Condes</div>
+      <h2>Un espacio diseñado para vivir de verdad</h2>
+      <p>Tus hijos a 5 minutos de los mejores colegios. Tú, a una parada de metro de todo Santiago. Tu familia, protegida las 24 horas sin que tengas que pensar en ello. Las oportunidades de esta envergadura en este sector son escasas — y quienes viven aquí raramente se van.</p>
+      <div class="feat">
+        <div><i>✦</i><span><b>Terraza panorámica 180°</b> con luz natural todo el día</span></div>
+        <div><i>✦</i><span><b>Acceso controlado 24/7</b> con reconocimiento facial y conserjería</span></div>
+        <div><i>✦</i><span><b>Bajos gastos comunes</b> — tu bolsillo también lo agradece</span></div>
+        <div><i>✦</i><span><b>Rodeado de colegios, universidades y clínicas</b> de primer nivel</span></div>
+      </div>
     </div>
-    <div class="datos">
+  </div>
+</section>
+
+<section class="ig" id="galeria">
+  <div class="wrap">
+    <h2>Síguenos en Instagram</h2>
+    <a class="handle" id="igHandle" target="_blank" rel="noopener">@tuasesorainmobiliaria ↗</a>
+    <div class="collage" id="collage"></div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div class="top">
+      <h2>Conversemos<i>.</i></h2>
+      <div class="tag">TU ASESORÍA INMOBILIARIA · 2026</div>
+    </div>
+    <div class="cgrid">
       <div>
-        <div class="dato">
-          <div class="et">WHATSAPP</div>
-          <a class="wsp-ico" id="wspPie" target="_blank" rel="noopener">
-            <span><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
-            <span id="telTexto" style="background:none;width:auto;height:auto;border-radius:0"></span>
+        <div class="cblock">
+          <div class="clabel">WhatsApp</div>
+          <a class="wa-line" id="cWa" target="_blank" rel="noopener">
+            <span class="wa-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span>
+            <span id="cPhone">+ 56 99 8383 991</span>
           </a>
         </div>
-        <div class="dato"><div class="et">EMAIL</div><a id="mailLink"></a></div>
-        <div class="dato"><div class="et">INSTAGRAM</div><a id="igLink2" target="_blank" rel="noopener"></a></div>
+        <div class="cblock">
+          <div class="clabel">Email</div>
+          <a href="mailto:hola@tuai.cl">hola@tuai.cl</a>
+        </div>
+        <div class="cblock">
+          <div class="clabel">Instagram</div>
+          <a id="cIg" target="_blank" rel="noopener">@tuasesorainmobiliaria</a>
+        </div>
       </div>
       <div>
-        <div class="et" style="font-size:10.5px;letter-spacing:3px;color:#969696;margin-bottom:8px">UBICACIÓN</div>
-        <div class="ubica" id="ubicaTexto"></div>
-        <p>Las oportunidades bajo tasación no esperan. Coordina tu visita o una asesoría por WhatsApp.</p>
+        <div class="clabel">Ubicación</div>
+        <div class="cbig">Vitacura,<br>Región Metropolitana</div>
+        <p style="font-size:13px;line-height:1.8;color:#B8B2AC;margin:0">Las oportunidades bajo tasación no esperan. Coordina tu visita o una asesoría por WhatsApp.</p>
       </div>
-      <div style="height:260px;overflow:hidden"><img id="fotoContacto" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="loc-img"><img src="vitacura.jpg" alt="Vitacura, Región Metropolitana" onerror="this.style.display='none'"></div>
     </div>
-    <div class="pie">
-      <img src="logo-tuai-blanco.png" alt="TuAI">
-      <div class="legal">
+    <div class="foot">
+      <div class="logo-badge"><img src="logo-tuai-dark.png" alt="TuAI — Tu Asesoría Inmobiliaria" onerror="this.style.display='none'"></div>
+      <div class="row">
         <div>© 2026 TU ASESORÍA INMOBILIARIA. TODOS LOS DERECHOS RESERVADOS.</div>
         <div>TUAI.CL</div>
       </div>
@@ -266,270 +361,233 @@ header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid 
   </div>
 </section>
 
-<a class="flota" id="wspFlota" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z"/></svg>
+<a class="float-wa" id="floatWa" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
 </a>
 
-<div id="lb"><button aria-label="Cerrar">&times;</button><img alt=""></div>
-
 <script>
-/* ═══════════════════════════════════════════════════════════════════════
-   ⚙️  CONFIGURACIÓN — ESTO ES LO ÚNICO QUE EDITAS
-   ───────────────────────────────────────────────────────────────────────
-   Para AGREGAR UNA PROPIEDAD: copia un bloque { ... } completo, pégalo
-   dentro de PROPIEDADES y cambia sus datos. Sube las fotos con el prefijo
-   que elijas (ej: nu_01.jpg, nu_02.jpg ...) y listo.
-   Las fotos se detectan solas: no hay que indicar cuántas son.
-   ═══════════════════════════════════════════════════════════════════════ */
+/* ====== CONFIGURACIÓN — editar aquí para agregar/quitar propiedades ====== */
+/* Para una propiedad nueva: copia un bloque, cambia los datos, sube las fotos
+   con su prefijo (ej. nueva_01.jpg, nueva_02.jpg…) y crea su ficha .html.
+   Las fotos se detectan solas; no se escribe ningún nombre de archivo a mano. */
+var WA_NUMBER = "56998383991";
+var WA_DISPLAY = "+ 56 99 8383 991";
+var INSTAGRAM = "tuasesorainmobiliaria";
 
-const MARCA = {
-  telefono : "+ 56 9 9838 3991",
-  whatsapp : "56998383991",
-  correo   : "tuasesoriainmobiliariacl@gmail.com",
-  instagram: "@tuasesorainmobiliaria",
-  ubicacion: "Vitacura,<br>Región Metropolitana",
-  intro    : "Gestión profesional de ventas, arriendos y administración. Hoy destacado: departamento remodelado de 4 dormitorios en San Bernardo, $29 millones bajo su tasación bancaria."
-};
-
-const PROPIEDADES = [
+var PROPERTIES = [
   {
-    prefijo   : "sb",                                  // nombre de las fotos: sb_01.jpg, sb_02.jpg...
-    ficha     : "depto-san-bernardo.html",             // página de la propiedad
-    menu      : "Depto San Bernardo · 84 m²",
-    menuSub   : "Condominio cerrado, San Bernardo",
-    badge     : "EN VENTA · BAJO TASACIÓN",
-    badgeOsc  : false,
-    titulo    : "Departamento 4D + 2B, San Bernardo",
-    resumen   : "Departamento completamente remodelado en condominio cerrado con seguridad y áreas verdes, a pasos de colegios, comercio y centros de salud. 84 m² bien pensados, cocina independiente con logia y terraza cerrada de 10 m² con orientación oriente–poniente.",
-    precio    : "$ 109.000.000",
-    precioAntes: "$138.000.000",
-    detalles  : [
-      ["📍","Ubicación","San Bernardo, condominio cerrado"],
-      ["📐","Superficie","84 m² útiles + 10 m² terraza"],
-      ["🛏️","Dormitorios","4 dormitorios"],
-      ["🛁","Baños","2 baños"],
-      ["🏦","Contribuciones","No paga — ahorro directo cada año"],
-      ["📋","Gasto común","$78.000"]
-    ],
-    video     : "3r4ZDG9gY5k",
-    narrativa : {
-      epi: "IMAGINA LLEGAR A CASA ASÍ",
-      titulo: "Espacio real para tu familia, con los números a tu favor",
-      texto: "4 dormitorios y 2 baños: espacio para que cada uno tenga su pieza, o para armar tu oficina o pieza de invitados. La terraza cerrada de 10 m² se convierte en lo que quieras: home office, sala de juegos o tu rincón de café con luz de mañana y de tarde.",
-      simbolo: "✓",
-      puntos: [
-        ["Ventanales termopanel"," — menos frío, menos ruido, menos gasto en calefacción"],
-        ["Cocina cerrada con logia"," — adiós olores en el living, adiós ropa a la vista"],
-        ["Condominio cerrado"," con seguridad y áreas verdes, sin depender del auto"]
-      ],
-      cierre: "¿Tienes dudas sobre el crédito? Te orientamos sin costo en tu simulación."
-    }
+    prefix: "sb_",
+    op: "venta",                       // "venta" o "arriendo"
+    badge: "EN VENTA · BAJO TASACIÓN",
+    title: "Departamento 4D + 2B, San Bernardo",
+    location: "Condominio cerrado, San Bernardo",
+    desc: "Departamento completamente remodelado en condominio cerrado con seguridad y áreas verdes, a pasos de colegios, comercio y centros de salud. 84 m² bien pensados, cocina independiente con logia y terraza cerrada de 10 m² con orientación oriente–poniente.",
+    price: "$109.000.000",
+    tasacion: "$138.000.000",
+    stats: [["84","m² totales"],["4","dormitorios"],["2","baños"],["10","m² terraza"],["San Bernardo","comuna"]],
+    ficha: "depto-san-bernardo.html",
+    waMsg: "Hola, me interesa el departamento de San Bernardo"
   },
   {
-    prefijo   : "lc",
-    ficha     : "depto-las-condes.html",
-    menu      : "Depto Los Dominicos · 96 m²",
-    menuSub   : "Av. Apoquindo, Las Condes",
-    badge     : "EN VENTA · LAS CONDES",
-    badgeOsc  : true,
-    titulo    : "Departamento 3D + 2B, Los Dominicos",
-    resumen   : "96 m² totales con vida útil real en Av. Apoquindo, sector Los Dominicos. Orientación sur-oriente con luz natural todo el día y una terraza panorámica de 180° que recorre todo el ancho de la propiedad. A pasos del Metro Los Dominicos, con estacionamiento y bodega incluidos.",
-    precio    : "$ 289.000.000",
-    precioAntes: "",
-    detalles  : [
-      ["📍","Ubicación","Av. Apoquindo, Los Dominicos"],
-      ["📐","Superficie","96 m² totales + 12 m² terraza"],
-      ["🛏️","Dormitorios","3 dormitorios amplios"],
-      ["🛁","Baños","2 baños completos"],
-      ["🚇","Metro","A pasos de Los Dominicos"],
-      ["🚗","Incluye","Estacionamiento y bodega"]
-    ],
-    video     : "_5HLTQ8pT7U",
-    narrativa : {
-      epi: "LOS DOMINICOS · LAS CONDES",
-      titulo: "Un espacio diseñado para vivir de verdad",
-      texto: "Tus hijos a 5 minutos de los mejores colegios. Tú, a una parada de metro de todo Santiago. Tu familia, protegida las 24 horas sin que tengas que pensar en ello. Las oportunidades de esta envergadura en este sector son escasas — y quienes viven aquí raramente se van.",
-      simbolo: "✦",
-      puntos: [
-        ["Terraza panorámica 180°"," con luz natural todo el día"],
-        ["Acceso controlado 24/7"," con reconocimiento facial y conserjería"],
-        ["Bajos gastos comunes"," — tu bolsillo también lo agradece"],
-        ["Rodeado de colegios, universidades y clínicas"," de primer nivel"]
-      ],
-      cierre: "¿Tu familia merece vivir así? La respuesta ya la sabes."
-    }
+    prefix: "lc_",
+    op: "venta",
+    badge: "EN VENTA · LAS CONDES",
+    title: "Departamento 3D + 2B, Los Dominicos",
+    location: "Av. Apoquindo, Los Dominicos, Las Condes",
+    desc: "96 m² totales con vida útil real en Av. Apoquindo, sector Los Dominicos. Orientación sur-oriente con luz natural todo el día y una terraza panorámica de 180° que recorre todo el ancho de la propiedad. A pasos del Metro Los Dominicos, con estacionamiento y bodega incluidos.",
+    price: "$289.000.000",
+    tasacion: "",
+    stats: [["96","m² totales"],["3","dormitorios"],["2","baños"],["180°","terraza"],["1","estacionamiento"],["1","bodega"],["Las Condes","comuna"]],
+    ficha: "depto-las-condes.html",
+    waMsg: "Hola, me interesa el Depto Los Dominicos 96 m2"
+  },
+  {
+    prefix: "sm_",
+    op: "venta",
+    badge: "DPTO SAN MIGUEL",
+    title: "Departamento 1D + 1B, San Miguel",
+    location: "Tercera Avenida / Primera Transversal, San Miguel",
+    desc: "Piso alto con vista libre a dos cuadras del Metro Ciudad del Niño. Dormitorio en suite con walk-in closet, cocina americana full equipada y amoblada, terminaciones modernas y conserjería 24/7. Ideal para estrenar tu independencia, dar el paso en pareja o invertir con excelente demanda de arriendo.",
+    price: "1.599 UF",
+    tasacion: "",
+    stats: [["34","m² totales"],["1","dormitorio"],["1","baño"],["4","m² terraza"],["San Miguel","comuna"]],
+    ficha: "depto-san-miguel.html",
+    waMsg: "Hola, me interesa el departamento de San Miguel"
+  },
+  {
+    prefix: "bt_",
+    op: "venta",
+    badge: "EN VENTA · BODEGA TOCORNAL",
+    title: "Bodega 502 m², Santiago Centro",
+    location: "Calle Tocornal, Santiago Centro",
+    desc: "Bodega de 502 m² construidos en un sector estratégico de Santiago, cerca de Av. Matta y del eje Santa Isabel, con excelente conectividad y alto flujo vehicular. Ideal para logística urbana, operaciones de última milla, almacenamiento o inversión. Ubicación central con acceso a carreteras.",
+    price: "10.099 UF",
+    tasacion: "11.199 UF",
+    stats: [["502","m² construidos"],["302","m² terreno"],["Bodega","cerrada"],["Última milla","logística"],["Santiago Centro","comuna"]],
+    ficha: "bodega-tocornal.html",
+    waMsg: "Hola, me interesa la Bodega Tocornal de 502 m2"
   }
 ];
+/* ======================================================================== */
 
-const SERVICIOS = [
-  ["01","Arriendo y administración","Publicación profesional, selección rigurosa de arrendatarios y administración mensual transparente de tu propiedad."],
-  ["02","Compra y venta","Tasación, estrategia de precio y acompañamiento completo en la negociación y el cierre de tu operación."],
-  ["03","Evaluación de arrendatarios","Informes de evaluación y recomendación con respaldo documental, para que arriendes con total confianza."]
-];
+var waLink = function(msg){ return "https://wa.me/" + WA_NUMBER + (msg ? "?text=" + encodeURIComponent(msg) : ""); };
+var igLink = "https://instagram.com/" + INSTAGRAM;
 
-/* ═══════════════ FIN DE LA CONFIGURACIÓN — no editar más abajo ═══════════════ */
-
-const wa = "https://wa.me/" + MARCA.whatsapp;
-const esc = t => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-
-/* Detecta automáticamente cuántas fotos hay de cada propiedad.
-   Consulta sin descargar (HEAD) y devuelve solo las que existen. */
-async function detectarFotos(prefijo, tope = 40) {
-  const pruebas = Array.from({length: tope}, (_, k) => k + 1).map(async n => {
-    const src = prefijo + "_" + String(n).padStart(2, "0") + ".jpg";
-    try { return (await fetch(src, {method: "HEAD"})).ok ? src : null; }
-    catch { return null; }
+/* Autodetección de fotos: prueba prefijo+01.jpg, +02.jpg… y para en el primer fallo. */
+function detectPhotos(prefix, cap){
+  cap = cap || 40;
+  return new Promise(function(resolve){
+    var found = [], i = 1;
+    function step(){
+      if(i > cap) return resolve(found);
+      var name = prefix + (i<10 ? "0"+i : ""+i) + ".jpg";
+      var im = new Image();
+      im.onload = function(){ found.push(name); i++; step(); };
+      im.onerror = function(){ resolve(found); };
+      im.src = name;
+    }
+    step();
   });
-  return (await Promise.all(pruebas)).filter(Boolean);
 }
 
-/* ---------- Marca y contacto ---------- */
-function pintarMarca() {
-  document.getElementById("heroTexto").textContent = MARCA.intro;
-  const ig = "https://instagram.com/" + MARCA.instagram.replace("@", "");
-  [["wspNav", wa], ["wspHero", wa], ["wspPie", wa], ["wspFlota", wa]]
-    .forEach(([id, href]) => document.getElementById(id).href = href);
-  document.getElementById("wspNav").innerHTML =
-    '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg><span>' + esc(MARCA.telefono) + '</span>';
-  document.getElementById("telTexto").textContent = MARCA.telefono;
-  const mail = document.getElementById("mailLink");
-  mail.href = "mailto:" + MARCA.correo; mail.textContent = MARCA.correo;
-  ["igLink", "igLink2"].forEach(id => {
-    const a = document.getElementById(id);
-    a.href = ig; a.textContent = MARCA.instagram + (id === "igLink" ? " ↗" : "");
-  });
-  document.getElementById("ubicaTexto").innerHTML = MARCA.ubicacion;
-}
+function el(tag, cls, html){ var e=document.createElement(tag); if(cls) e.className=cls; if(html!=null) e.innerHTML=html; return e; }
 
-/* ---------- Menú desplegable ---------- */
-function pintarMenu() {
-  document.getElementById("dropMenu").innerHTML =
-    PROPIEDADES.map(p => `<a href="${esc(p.ficha)}"><b>${esc(p.menu)}</b><small>${esc(p.menuSub)}</small></a>`).join("") +
-    '<a href="#propiedades" class="todas">VER TODAS LAS PROPIEDADES →</a>';
-  document.getElementById("burger").onclick = () =>
-    document.getElementById("menu").classList.toggle("abierto");
-  document.getElementById("dropBtn").onclick = e => {
-    e.preventDefault(); document.getElementById("drop").classList.toggle("abierto");
+function buildCard(p, idx, photos){
+  var card = el("div", "card" + (idx%2 ? " rev" : ""));
+  // MEDIA (carousel)
+  var media = el("div", "card-media");
+  if(photos.length){
+    var carou = el("div","carou");
+    var track = el("div","carou-track");
+    photos.forEach(function(src,k){
+      var im = el("img"); im.src=src; im.alt=p.title+" foto "+(k+1); im.loading="lazy";
+      im.onerror=function(){this.style.display='none';};
+      if(k===0) im.className="on";
+      track.appendChild(im);
+    });
+    carou.appendChild(track);
+    var prev = el("div","arw prev","←"), next = el("div","arw next","→");
+    var count = el("div","count","1 / "+photos.length);
+    carou.appendChild(prev); carou.appendChild(next); carou.appendChild(count);
+    media.appendChild(carou);
+    var thumbs = el("div","thumbs");
+    photos.forEach(function(src,k){
+      var t = el("img"); t.src=src; t.alt=""; t.loading="lazy"; t.onerror=function(){this.style.display='none';};
+      if(k===0) t.className="on";
+      t.addEventListener("click",function(){ go(k); });
+      thumbs.appendChild(t);
+    });
+    media.appendChild(thumbs);
+    var cur = 0;
+    function go(k){
+      cur = (k % photos.length + photos.length) % photos.length;
+      var imgs = track.children, ths = thumbs.children;
+      for(var j=0;j<imgs.length;j++){ imgs[j].className = (j===cur?"on":""); }
+      for(var j=0;j<ths.length;j++){ ths[j].className = (j===cur?"on":""); }
+      count.textContent = (cur+1)+" / "+photos.length;
+    }
+    prev.addEventListener("click",function(){ go(cur-1); });
+    next.addEventListener("click",function(){ go(cur+1); });
+  } else {
+    var ph = el("div","carou"); media.appendChild(ph);
+  }
+  // BODY
+  var body = el("div","card-body");
+  body.appendChild(el("div","badge"+(p.op==="venta"?" sale":""), p.badge));
+  body.appendChild(el("h3", null, p.title));
+  body.appendChild(el("p","desc", p.desc));
+  if(p.price){ body.appendChild(el("div","price", p.price)); }
+  if(p.tasacion){ body.appendChild(el("div","tas", 'Tasación bancaria: <s>'+p.tasacion+'</s>')); }
+  var specIcon = function(label){
+    var t = (label||"").toLowerCase();
+    if(t.indexOf("comuna")>-1) return "🏙️";
+    if(t.indexOf("terraza")>-1) return "🌇";
+    if(t.indexOf("m²")>-1 || t.indexOf("total")>-1 || t.indexOf("útil")>-1 || t.indexOf("util")>-1) return "📐";
+    if(t.indexOf("dorm")>-1) return "🛏️";
+    if(t.indexOf("baño")>-1 || t.indexOf("bano")>-1) return "🛁";
+    if(t.indexOf("estac")>-1 || t.indexOf("auto")>-1) return "🚗";
+    if(t.indexOf("bodega")>-1) return "📦";
+    if(t.indexOf("metro")>-1) return "🚇";
+    return "✦";
   };
+  var specs = el("div","card-specs");
+  (p.stats||[]).forEach(function(s){
+    var sp = el("div","spec");
+    sp.appendChild(el("div","sl",'<i>'+specIcon(s[1])+'</i>'+s[1]));
+    sp.appendChild(el("div","sv", s[0]));
+    specs.appendChild(sp);
+  });
+  var btns = el("div","card-btns");
+  var a2 = el("a","btn btn-gold","Quiero verlo"); a2.href=waLink(p.waMsg); a2.target="_blank"; a2.rel="noopener";
+  btns.appendChild(a2);
+  body.appendChild(btns);
+  card.appendChild(body); card.appendChild(media); card.appendChild(specs);
+  if(idx % 2 === 1) card.classList.add("rev");
+  return card;
 }
 
-/* ---------- Servicios ---------- */
-function pintarServicios() {
-  document.getElementById("listaServicios").innerHTML = SERVICIOS
-    .map(([n, t, x]) => `<div class="tarjeta"><div class="num">${esc(n)}</div><b>${esc(t)}</b><p>${esc(x)}</p></div>`).join("");
-}
-
-/* ---------- Una propiedad con su carrusel ---------- */
-function bloquePropiedad(p, fotos, i) {
-  const info = `
-    <div class="info">
-      <div class="badge${p.badgeOsc ? " osc" : ""}">${esc(p.badge)}</div>
-      <h3>${esc(p.titulo)}</h3>
-      <p class="resumen">${esc(p.resumen)}</p>
-      <div class="precio">${esc(p.precio)}</div>
-      ${p.precioAntes ? `<div class="antes">Tasación bancaria: <s>${esc(p.precioAntes)}</s></div>` : '<div class="antes"></div>'}
-      <div class="botones">
-        <a href="${esc(p.ficha)}" class="btn">VER FICHA COMPLETA →</a>
-        <a href="${wa}" target="_blank" rel="noopener" class="btn osc">QUIERO VERLO</a>
-      </div>
-    </div>`;
-  const carrusel = fotos.length ? `
-    <div class="carrusel" data-i="${i}">
-      <div class="marco">
-        <img class="grande" src="${fotos[0]}" alt="${esc(p.titulo)}">
-        <button class="flecha izq" data-paso="-1" aria-label="Anterior">←</button>
-        <button class="flecha der" data-paso="1" aria-label="Siguiente">→</button>
-        <div class="contador">1 / ${fotos.length}</div>
-      </div>
-      <div class="minis">${fotos.map((f, k) =>
-        `<img src="${f}" data-k="${k}" class="${k === 0 ? "on" : ""}" alt="Miniatura ${k + 1}" loading="lazy">`).join("")}</div>
-    </div>` : '<div class="carrusel"></div>';
-  const detalles = `<div class="detalles">${p.detalles
-    .map(([ic, la, va]) => `<div><b><span>${ic}</span>${esc(la)}</b><span>${esc(va)}</span></div>`).join("")}</div>`;
-  return `<div class="prop${i % 2 ? " invertida" : ""}">${i % 2 ? detalles + carrusel + info : info + carrusel + detalles}</div>`;
-}
-
-/* ---------- Narrativa + video de cada propiedad ---------- */
-function bloqueNarrativa(p, i) {
-  if (!p.narrativa) return "";
-  const n = p.narrativa;
-  const texto = `
-    <div>
-      <div class="epi">${esc(n.epi)}</div>
-      <h2>${esc(n.titulo)}</h2>
-      <p>${esc(n.texto)}</p>
-      <div class="puntos">${n.puntos.map(([b, r]) =>
-        `<div><i>${esc(n.simbolo)}</i><span><strong style="color:var(--t)">${esc(b)}</strong>${esc(r)}</span></div>`).join("")}</div>
-      <p style="margin-top:20px;font-size:13px;color:var(--g)">${esc(n.cierre)}
-        <a href="${wa}" target="_blank" rel="noopener" style="font-weight:bold">Escríbenos</a>.</p>
-    </div>`;
-  const video = p.video
-    ? `<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/${esc(p.video)}" title="Video ${esc(p.titulo)}" loading="lazy" allowfullscreen></iframe></div>`
-    : "";
-  return `<section class="sec${i % 2 ? " crema" : ""}"><div class="wrap"><div class="narra">${
-    i % 2 ? video + texto : texto + video}</div></div></section>`;
-}
-
-/* ---------- Carruseles interactivos ---------- */
-function activarCarruseles(fotosPorProp) {
-  document.querySelectorAll(".carrusel").forEach(c => {
-    const i = +c.dataset.i, fotos = fotosPorProp[i];
-    if (!fotos || !fotos.length) return;
-    let n = 0;
-    const grande = c.querySelector(".grande"), cont = c.querySelector(".contador");
-    const minis = [...c.querySelectorAll(".minis img")];
-    const mostrar = k => {
-      n = (k + fotos.length) % fotos.length;
-      grande.src = fotos[n];
-      cont.textContent = (n + 1) + " / " + fotos.length;
-      minis.forEach((m, j) => m.classList.toggle("on", j === n));
-    };
-    c.querySelectorAll(".flecha").forEach(b => b.onclick = () => mostrar(n + (+b.dataset.paso)));
-    minis.forEach(m => m.onclick = () => mostrar(+m.dataset.k));
-    grande.onclick = () => abrirLightbox(grande.src);
+function buildCollage(allPhotos){
+  var box = document.getElementById("collage");
+  if(!allPhotos.length){ box.parentElement.parentElement.style.display="none"; return; }
+  // mezclar tomando alternado de cada propiedad ya viene combinado; elegir 5 repartidas
+  var pick = [];
+  var step = Math.max(1, Math.floor(allPhotos.length/5));
+  for(var i=0; i<allPhotos.length && pick.length<5; i+=step){ pick.push(allPhotos[i]); }
+  while(pick.length<5 && pick.length<allPhotos.length){ pick.push(allPhotos[pick.length]); }
+  pick.forEach(function(src,k){
+    var a = el("a","cg"+k); a.href=igLink; a.target="_blank"; a.rel="noopener";
+    var im=el("img"); im.src=src; im.alt="TuAI en Instagram"; im.loading="lazy"; im.onerror=function(){this.parentElement.style.display='none';};
+    a.appendChild(im); box.appendChild(a);
   });
 }
 
-/* ---------- Lightbox ---------- */
-const lb = document.getElementById("lb");
-function abrirLightbox(src) { lb.querySelector("img").src = src; lb.classList.add("on"); }
-lb.onclick = () => lb.classList.remove("on");
-addEventListener("keydown", e => { if (e.key === "Escape") lb.classList.remove("on"); });
+function initStatic(){
+  document.getElementById("navPhone").textContent = WA_DISPLAY;
+  document.getElementById("cPhone").textContent = WA_DISPLAY;
+  document.getElementById("navWa").href = waLink("Hola, quiero asesoría con TuAI");
+  document.getElementById("heroWa").href = waLink("Hola, quiero asesoría con TuAI");
+  document.getElementById("cWa").href = waLink("Hola, quiero asesoría con TuAI");
+  document.getElementById("floatWa").href = waLink("Hola, quiero asesoría con TuAI");
+  document.getElementById("igHandle").href = igLink;
+  document.getElementById("cIg").href = igLink;
+  document.getElementById("igHandle").textContent = "@"+INSTAGRAM+" ↗";
+  document.getElementById("cIg").textContent = "@"+INSTAGRAM;
+  // dropdown de propiedades
+  var list = document.getElementById("dropList");
+  PROPERTIES.forEach(function(p){
+    var a = el("a"); a.href=p.ficha;
+    a.innerHTML = "<b>"+p.title+"</b><small>"+p.location+"</small>";
+    list.appendChild(a);
+  });
+  var all = el("a","drop-all","Ver todas las propiedades →"); all.href="#propiedades";
+  list.appendChild(all);
+  // menú móvil
+  var hamb=document.getElementById("hamb"), menu=document.getElementById("menu");
+  hamb.addEventListener("click",function(){ menu.classList.toggle("open"); });
+  var drop=document.getElementById("drop"), dt=document.getElementById("dropToggle");
+  dt.addEventListener("click",function(){ if(window.innerWidth<=1024) drop.classList.toggle("open"); });
+  menu.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener("click",function(){ menu.classList.remove("open"); }); });
+}
 
-/* ---------- Arranque ---------- */
-(async function () {
-  pintarMarca(); pintarMenu(); pintarServicios();
-
-  // Detectar las fotos de todas las propiedades en paralelo
-  const fotosPorProp = await Promise.all(PROPIEDADES.map(p => detectarFotos(p.prefijo)));
-
-  document.getElementById("listaProps").innerHTML =
-    PROPIEDADES.map((p, i) => bloquePropiedad(p, fotosPorProp[i], i)).join("");
-  document.getElementById("narrativas").innerHTML =
-    PROPIEDADES.map((p, i) => bloqueNarrativa(p, i)).join("");
-  activarCarruseles(fotosPorProp);
-
-  // Portada del hero: primera foto de la primera propiedad que tenga fotos
-  const primera = fotosPorProp.find(f => f.length);
-  if (primera) document.getElementById("heroImg").src = primera[0];
-
-  // Tira de Instagram: 5 fotos alternando entre propiedades
-  const mezcla = [];
-  for (let k = 1; mezcla.length < 5 && k < 20; k++)
-    fotosPorProp.forEach(f => { if (f[k] && mezcla.length < 5) mezcla.push(f[k]); });
-  document.getElementById("tiraFotos").innerHTML = mezcla
-    .map(s => `<img src="${s}" alt="Foto TuAI" loading="lazy">`).join("");
-  document.querySelectorAll(".tira img").forEach(im => im.onclick = () => abrirLightbox(im.src));
-
-  // Foto de la sección contacto: última foto disponible
-  const ultima = fotosPorProp.flat().slice(-1)[0];
-  if (ultima) document.getElementById("fotoContacto").src = ultima;
-
-  // Red de seguridad: si alguna imagen falla igual, se oculta (nunca ícono roto)
-  document.querySelectorAll("img").forEach(im =>
-    im.addEventListener("error", () => im.style.visibility = "hidden"));
+(function(){
+  initStatic();
+  var cardsBox = document.getElementById("cards");
+  Promise.all(PROPERTIES.map(function(p){ return detectPhotos(p.prefix); })).then(function(results){
+    var interleaved = [];
+    results.forEach(function(list, idx){
+      PROPERTIES[idx]._photos = list;
+      cardsBox.appendChild(buildCard(PROPERTIES[idx], idx, list));
+    });
+    // contacto = una de la segunda propiedad si existe
+    var heroImgEl = document.getElementById("heroImg");
+    if(heroImgEl && results[0] && results[0][0]) heroImgEl.src = results[0][0];
+    var second = results[1] && results[1].length ? results[1] : results[0];
+    // collage: intercalar fotos de todas las propiedades
+    var max = Math.max.apply(null, results.map(function(r){return r.length;}).concat([0]));
+    for(var i=0;i<max;i++){ results.forEach(function(r){ if(r[i]) interleaved.push(r[i]); }); }
+    buildCollage(interleaved);
+  });
 })();
 </script>
-
 </body>
 </html>
