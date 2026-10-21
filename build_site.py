@@ -111,6 +111,9 @@ PROPERTIES_BY_ID["p1"].update(dict(
     uf_precio="UF 11.599",
     clp_precio="$ 477.815.585 CLP aprox.",
     precio="UF 11.599",
+    pie="UF 1.159,9 (10%) · $47.781.559 aprox.",
+    monto_financiar="UF 10.439,1 · $430.034.027 aprox.",
+    dividendo_estimado="$2.356.328 – $2.719.252 aprox. (según banco, crédito UF a 30 años)",
     specs_text="3D + serv. / 3B + serv. · 210 m² útiles · 5.000 m² de terreno",
     mapa_img=f"{_TUNQUEN_FOTO_DIR}/tunquen-mapa.jpg",
     resumen=(
