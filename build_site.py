@@ -102,8 +102,8 @@ PROPERTIES_BY_ID["p1"].update(dict(
     fotos=[f"{_TUNQUEN_FOTO_DIR}/tunquen-portada.jpg"] +
           [f"{_TUNQUEN_FOTO_DIR}/tunquen-{n:02d}.jpg" for n in _TUNQUEN_FOTOS],
     video_youtube="https://www.youtube.com/watch?v=GagnKvKlRk8",
-    dormitorios="3",
-    banos="3",
+    dormitorios="3 + 1 serv.",
+    banos="3 + 1 serv.",
     superficie_util="210 m²",
     superficie_total="5.000 m²",
     estacionamientos="8",
@@ -111,7 +111,7 @@ PROPERTIES_BY_ID["p1"].update(dict(
     uf_precio="UF 11.599",
     clp_precio="$ 477.815.585 CLP aprox.",
     precio="UF 11.599",
-    specs_text="3D / 3B · 210 m² útiles · 5.000 m² de terreno",
+    specs_text="3D + serv. / 3B + serv. · 210 m² útiles · 5.000 m² de terreno",
     mapa_img=f"{_TUNQUEN_FOTO_DIR}/tunquen-mapa.jpg",
     resumen=(
         "<strong>Casa en Tunquén — donde el mar y el bosque se encuentran.</strong><br><br>"
@@ -806,7 +806,7 @@ def ficha_page_html(p):
             <div style="display:flex;justify-content:space-between;padding:10px 0;border-top:1px dashed var(--gray-300)"><span style="font-size:14px;color:var(--gray-700)">Pie</span><span style="font-size:14px;font-weight:700;color:var(--gray-900)">{p['pie']}</span></div>
             <div style="display:flex;justify-content:space-between;padding:10px 0;border-top:1px dashed var(--gray-300)"><span style="font-size:14px;color:var(--gray-700)">Monto a financiar</span><span style="font-size:14px;font-weight:700;color:var(--gray-900)">{p['monto_financiar']}</span></div>
             <div style="display:flex;justify-content:space-between;padding:10px 0;border-top:1px dashed var(--gray-300)"><span style="font-size:14px;color:var(--gray-700)">Dividendo estimado</span><span style="font-size:14px;font-weight:700;color:var(--gray-900)">{p['dividendo_estimado']}</span></div>
-            <p style="font-size:11px;color:var(--gray-500);padding-top:10px">Valores referenciales</p>
+            <p style="font-size:11px;color:var(--gray-500);padding-top:10px">Pie 10% · Información referencial al día de hoy. Si deseas más información puedes consultar el <a href="https://servicios.cmfchile.cl/simuladorhipotecario/aplicacion?indice=101.2.1" target="_blank" rel="noopener" style="color:var(--gray-500);text-decoration:underline">simulador hipotecario de la CMF</a>.</p>
           </div>
         </div>
 
