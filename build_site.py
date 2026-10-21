@@ -74,6 +74,54 @@ for p in PROPERTIES:
 
 PROPERTIES_BY_ID = {p["id"]: p for p in PROPERTIES}
 
+# ----------------------------------------------------------------------
+# Datos reales ya recibidos del cliente (se van completando propiedad
+# por propiedad; todo lo que no esté acá sigue en placeholder).
+# ----------------------------------------------------------------------
+_TUNQUEN_FOTO_DIR = "/assets/propiedades/casa-tunquen"
+# Portada provisional: la foto de la fachada (tunquen-30). El cliente pidió
+# que la portada sea el archivo "6459_corregida", pero el nombre original
+# se pierde al subir las fotos al chat, así que no hay forma de saber cuál
+# de las 31 fotos es esa — queda pendiente de confirmación.
+_TUNQUEN_FOTOS = [30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+                  17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 31]
+PROPERTIES_BY_ID["p1"].update(dict(
+    fotos=[f"{_TUNQUEN_FOTO_DIR}/tunquen-{n:02d}.jpg" for n in _TUNQUEN_FOTOS],
+    video_youtube="https://www.youtube.com/watch?v=GagnKvKlRk8",
+    dormitorios="4",
+    resumen=(
+        "<strong>Casa en Tunquén — donde el mar y el bosque se encuentran.</strong><br><br>"
+        "Imagina despertar con la brisa marina entrando por la ventana y el verde infinito "
+        "del campo como vecino. Esta casa en Tunquén no es solo una propiedad: es una "
+        "invitación a vivir distinto, en un condominio que fusiona la calma de la vida "
+        "campestre con la energía del océano.<br><br>"
+        "<strong>Primer nivel</strong><br>"
+        "Un living-comedor de techos con viga a la vista recibe la luz natural a raudales, "
+        "mientras los pisos en desnivel juegan sutilmente con los espacios, dándole "
+        "personalidad a cada rincón. La chimenea es el corazón del hogar: calidez que se "
+        "abre directo a una amplia terraza, ideal para esos atardeceres que no querrás "
+        "terminar.<br><br>"
+        "La cocina, amplia y funcional, se complementa con una práctica loggia. Hay un "
+        "dormitorio de servicio completo, y para quienes trabajan desde casa, un home "
+        "office luminoso y espacioso que hace del teletrabajo un placer. Dos dormitorios "
+        "—uno en suite— se abren a la terraza con vista al entorno natural, además de un "
+        "completo baño de visitas para recibir sin preocupaciones.<br><br>"
+        "Afuera, el jardín invita a quedarse: piscina, extensas áreas verdes, juegos "
+        "infantiles, un generoso quincho para los asados de fin de semana y amplio "
+        "estacionamiento.<br><br>"
+        "<strong>Segundo nivel</strong><br>"
+        "El dormitorio principal es una suite con walk-in closet y salida a una terraza "
+        "con vista privilegiada a la bahía. Una escalera de estilo mediterráneo baja hasta "
+        "los jardines, conectando cada nivel con la naturaleza que rodea la casa.<br><br>"
+        "Tunquén — vive la costa como siempre la imaginaste."
+    ),
+))
+
+# Fotos para la rotación del hero de la portada (índice sobre tunquen-NN.jpg),
+# elegidas por ser las más vistosas del lote: piscina, dos jardines en flor,
+# vista al mar y la fachada.
+HOME_HERO_PHOTOS = [f"{_TUNQUEN_FOTO_DIR}/tunquen-{n:02d}.jpg" for n in (30, 11, 13, 24, 27)]
+
 # ======================================================================
 # 2) ESTILOS COMPARTIDOS (un solo archivo, assets/styles.css)
 # ======================================================================
@@ -596,8 +644,9 @@ def property_card_html(p):
 # ======================================================================
 def ficha_slide_html(foto, index):
     hidden = "" if index == 0 else " hidden"
+    loading = "eager" if index == 0 else "lazy"
     if foto:
-        inner = f'<img src="{foto}" alt="" style="width:100%;height:100%;object-fit:cover"/>'
+        inner = f'<img src="{foto}" alt="" loading="{loading}" style="width:100%;height:100%;object-fit:cover"/>'
     else:
         inner = f'{PLACEHOLDER_ICON}<span style="font-size:14px;color:var(--gray-500)">Foto de la propiedad</span>'
     return f'<div class="ficha-slide{hidden}" data-index="{index}" style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;position:absolute;inset:0">{inner}</div>'
@@ -711,7 +760,7 @@ def ficha_page_html(p):
 
         <!-- Plano -->
         <div style="display:flex;flex-direction:column;gap:12px">
-          <h2 style="font-size:19px;font-weight:700;color:var(--gray-900)">Plano del departamento</h2>
+          <h2 style="font-size:19px;font-weight:700;color:var(--gray-900)">Plano de la propiedad</h2>
           <div class="ph-image" style="width:100%;min-height:190px;border-radius:14px;flex-direction:column;gap:8px">
             {ficha_image_block_html(p['plano_img'], PLANO_PLACEHOLDER_ICON, 'Plano pendiente de carga', f"Plano de {p['titulo']}")}
           </div>
@@ -785,7 +834,7 @@ def home_page_html():
 
           <div style="flex:1 1 360px;min-width:280px;display:flex;flex-direction:column;gap:14px">
             <div class="card enter" style="height:260px;border-radius:14px;overflow:hidden;padding:0;position:relative">
-              <img id="heroPhoto" src="{prefix}assets/hero-1.jpg" alt="Propiedad gestionada por TuAI" style="width:100%;height:100%;object-fit:cover;transition:opacity .4s ease"/>
+              <img id="heroPhoto" src="{HOME_HERO_PHOTOS[0]}" alt="Propiedad gestionada por TuAI" style="width:100%;height:100%;object-fit:cover;transition:opacity .4s ease"/>
               <span style="position:absolute;top:12px;right:12px;display:flex;align-items:center;gap:5px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;font-weight:600;padding:5px 10px 5px 8px;border-radius:999px;backdrop-filter:blur(2px)">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="#fff" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1" fill="#fff"/></svg>
                 Novedades en Instagram
@@ -793,7 +842,7 @@ def home_page_html():
               <div id="heroDots" role="group" aria-label="Fotos destacadas" style="position:absolute;bottom:12px;left:12px;display:flex;gap:6px"></div>
             </div>
             <div id="heroPhotoData" class="hidden" aria-hidden="true">
-              <img src="{prefix}assets/hero-1.jpg"/><img src="{prefix}assets/hero-2.jpg"/><img src="{prefix}assets/hero-3.jpg"/>
+              {"".join(f'<img src="{src}"/>' for src in HOME_HERO_PHOTOS)}
             </div>
             <div style="display:flex;align-items:center;gap:10px">
               <div style="display:flex">
