@@ -50,6 +50,7 @@ PROPERTIES = [
 # hasta que lleguen los datos reales de cada propiedad.
 for p in PROPERTIES:
     p["fotos"] = [None] * 6
+    p["fotos_card"] = None     # 6 fotos variadas para la tarjeta de la portada (None = usa las 6 primeras de "fotos")
     p["specs_text"] = "Detalles y superficie por confirmar"
     p["precio"] = "Precio por confirmar"
     p["uf_precio"] = "UF —"
@@ -152,6 +153,10 @@ PROPERTIES_BY_ID["p1"].update(dict(
 # elegidas por ser las más vistosas del lote: piscina, dos jardines en flor,
 # vista al mar y la fachada.
 HOME_HERO_PHOTOS = [f"{_TUNQUEN_FOTO_DIR}/tunquen-{n:02d}.jpg" for n in (30, 2, 5, 20, 17, 24)]
+# 6 fotos variadas (una por ambiente) para que la tarjeta de la portada no
+# repita el mismo living una y otra vez: casa, living, dormitorio, baño,
+# cocina, vista al mar.
+PROPERTIES_BY_ID["p1"]["fotos_card"] = [f"{_TUNQUEN_FOTO_DIR}/tunquen-{n:02d}.jpg" for n in (30, 2, 20, 17, 6, 24)]
 
 # ======================================================================
 # 2) ESTILOS COMPARTIDOS (un solo archivo, assets/styles.css)
@@ -642,12 +647,14 @@ def thumb_btn_html(foto, index, active):
             f'display:flex;align-items:center;justify-content:center">{inner}</button>')
 
 def property_card_html(p):
-    fotos = p["fotos"]
+    fotos = (p.get("fotos_card") or p["fotos"][:6] + [None] * 6)[:6]
     thumbs_top = "".join(thumb_btn_html(fotos[i], i, i == 0) for i in range(4))
     thumbs_bottom = "".join(thumb_btn_html(fotos[i], i, False) for i in range(4, 6))
+    main_inner = (f'<img src="{fotos[0]}" alt="" style="width:100%;height:100%;object-fit:cover"/>'
+                  if fotos[0] else f'<div class="ph-image" style="width:100%;height:100%">{PLACEHOLDER_ICON}</div>')
     return f"""<article class="card property-card" data-tipo="{p['tipo_key']}" style="overflow:hidden;display:flex;flex-direction:column">
   <div class="card-main-photo" style="height:170px;position:relative;overflow:hidden">
-    <div class="ph-image" style="width:100%;height:100%">{PLACEHOLDER_ICON}</div>
+    {main_inner}
     <span class="tag {p['tag_class']}" style="position:absolute;top:12px;left:12px">{p['tipo']}</span>
   </div>
   <div style="padding:18px;display:flex;flex-direction:column;gap:10px;flex:1">
