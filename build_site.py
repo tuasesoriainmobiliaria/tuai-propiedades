@@ -81,17 +81,37 @@ PROPERTIES_BY_ID = {p["id"]: p for p in PROPERTIES}
 _TUNQUEN_FOTO_DIR = "/assets/propiedades/casa-tunquen"
 # Portada confirmada por el cliente: "tunquen-portada.jpg" (su archivo
 # "6459_corregida", reenviado directamente ya que el nombre original se
-# pierde al subir fotos al chat). El resto del recorrido queda en el orden
-# de llegada hasta que el cliente confirme que coincide con el orden de la
-# publicación en Portal Inmobiliario.
-_TUNQUEN_FOTOS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
-                  17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+# pierde al subir fotos al chat).
+#
+# Recorrido pedido por el cliente: portada -> living/comedor -> dormitorios
+# 1er piso -> dormitorios 2do piso (+ escaleras, estudio y pasillo) ->
+# cocina -> exteriores.
+_TUNQUEN_FOTOS = [
+    # Living / comedor (primer nivel)
+    2, 5, 1, 4, 3, 10, 9, 8,
+    # Dormitorios 1er piso (+ baño de visitas)
+    25, 20, 17,
+    # Dormitorios 2do piso + escaleras + estudio + pasillo
+    15, 19, 14, 22, 21, 16, 18, 26, 12,
+    # Cocina
+    6, 7,
+    # Exteriores
+    30, 31, 11, 13, 27, 28, 29, 23, 24,
+]
 PROPERTIES_BY_ID["p1"].update(dict(
     fotos=[f"{_TUNQUEN_FOTO_DIR}/tunquen-portada.jpg"] +
           [f"{_TUNQUEN_FOTO_DIR}/tunquen-{n:02d}.jpg" for n in _TUNQUEN_FOTOS],
     video_youtube="https://www.youtube.com/watch?v=GagnKvKlRk8",
-    dormitorios="4",
+    dormitorios="3",
     banos="3",
+    superficie_util="210 m²",
+    superficie_total="5.000 m²",
+    estacionamientos="8",
+    bodega="1",
+    uf_precio="UF 11.599",
+    clp_precio="$ 477.815.585 CLP aprox.",
+    precio="UF 11.599",
+    specs_text="3D / 3B · 210 m² útiles · 5.000 m² de terreno",
     mapa_img=f"{_TUNQUEN_FOTO_DIR}/tunquen-mapa.jpg",
     resumen=(
         "<strong>Casa en Tunquén — donde el mar y el bosque se encuentran.</strong><br><br>"
