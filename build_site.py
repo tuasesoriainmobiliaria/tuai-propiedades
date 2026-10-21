@@ -151,7 +151,7 @@ PROPERTIES_BY_ID["p1"].update(dict(
 # Fotos para la rotación del hero de la portada (índice sobre tunquen-NN.jpg),
 # elegidas por ser las más vistosas del lote: piscina, dos jardines en flor,
 # vista al mar y la fachada.
-HOME_HERO_PHOTOS = [f"{_TUNQUEN_FOTO_DIR}/tunquen-{n:02d}.jpg" for n in (30, 11, 13, 24, 27)]
+HOME_HERO_PHOTOS = [f"{_TUNQUEN_FOTO_DIR}/tunquen-{n:02d}.jpg" for n in (30, 2, 5, 20, 17, 24)]
 
 # ======================================================================
 # 2) ESTILOS COMPARTIDOS (un solo archivo, assets/styles.css)
@@ -455,7 +455,7 @@ HOME_JS = """(function(){
       eyebrow: 'Para dueños que quieren vender o arrendar',
       titulo: 'Vende o arrienda tu propiedad con una persona, sin perder el tiempo con un chatbot.',
       sub: 'Tasación, difusión, visitas y cierre — coordinados por nuestro equipo de principio a fin.',
-      ctaLabel: 'Quiero tasar mi propiedad',
+      ctaLabel: 'Quiero arrendar mi propiedad',
       ctaHref: 'https://wa.me/WA_PHONE?text=' + encodeURIComponent('Hola, quiero vender/arrendar mi propiedad. ¿Me ayudan con la tasación?'),
       ctaTarget: '_blank',
       switchLabel: '¿Buscas una propiedad? Ver para quién buscamos →'
@@ -687,20 +687,23 @@ def ficha_slide_html(foto, index):
 
 def ficha_video_block_html(p):
     if p["video_youtube"]:
-        right = (f'<a href="{p["video_youtube"]}" target="_blank" rel="noopener" '
-                 f'style="display:flex;align-items:center;gap:5px;font-size:14px;font-weight:700">Ver en YouTube'
-                 f'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">'
-                 f'<path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>')
-    else:
-        right = '<span style="font-size:13px;color:var(--gray-500)">Pendiente de carga</span>'
-    return f"""<div class="card" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:14px 18px;border-width:2px;border-color:var(--accent)">
+        return f"""<a href="{p['video_youtube']}" target="_blank" rel="noopener" class="card" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:14px 18px;border-width:2px;border-color:var(--accent);cursor:pointer">
       <span style="display:flex;align-items:center;gap:10px;font-weight:700;color:var(--gray-900)">
         <span class="icon-badge icon-accent" style="width:32px;height:32px;border-radius:999px">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M8 5v14l11-7-11-7Z"/></svg>
         </span>
         Video de la propiedad
       </span>
-      {right}
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>"""
+    return f"""<div class="card" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:14px 18px;border-width:2px;border-color:var(--gray-300)">
+      <span style="display:flex;align-items:center;gap:10px;font-weight:700;color:var(--gray-900)">
+        <span class="icon-badge" style="width:32px;height:32px;border-radius:999px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gray-500)" aria-hidden="true"><path d="M8 5v14l11-7-11-7Z"/></svg>
+        </span>
+        Video de la propiedad
+      </span>
+      <span style="font-size:13px;color:var(--gray-500)">Pendiente de carga</span>
     </div>"""
 
 def resumen_plain_text(html_str):
@@ -893,7 +896,7 @@ def home_page_html():
             <span class="eyebrow" id="heroEyebrow">Para dueños que quieren vender o arrendar</span>
             <h1 id="heroTitulo" style="font-size:clamp(30px,5vw,48px);font-weight:700;line-height:1.12;color:var(--gray-900)">Vende o arrienda tu propiedad con una persona, sin perder el tiempo con un chatbot.</h1>
             <p class="section-sub" id="heroSub" style="font-size:17px;max-width:500px">Tasación, difusión, visitas y cierre — coordinados por nuestro equipo de principio a fin.</p>
-            <a class="btn btn-primary" id="heroCta" href="#" target="_blank" rel="noopener" style="width:100%;max-width:360px;justify-content:center;margin-top:2px">Quiero tasar mi propiedad</a>
+            <a class="btn btn-primary" id="heroCta" href="#" target="_blank" rel="noopener" style="width:100%;max-width:360px;justify-content:center;margin-top:2px">Quiero arrendar mi propiedad</a>
             <button id="heroSwitchBtn" style="background:none;border:none;padding:0;text-align:left;font-size:14px;color:var(--gray-500);text-decoration:underline;width:fit-content;cursor:pointer">¿Buscas una propiedad? Ver para quién buscamos →</button>
           </div>
 

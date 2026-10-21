@@ -5,7 +5,7 @@
       eyebrow: 'Para dueños que quieren vender o arrendar',
       titulo: 'Vende o arrienda tu propiedad con una persona, sin perder el tiempo con un chatbot.',
       sub: 'Tasación, difusión, visitas y cierre — coordinados por nuestro equipo de principio a fin.',
-      ctaLabel: 'Quiero tasar mi propiedad',
+      ctaLabel: 'Quiero arrendar mi propiedad',
       ctaHref: 'https://wa.me/56998383991?text=' + encodeURIComponent('Hola, quiero vender/arrendar mi propiedad. ¿Me ayudan con la tasación?'),
       ctaTarget: '_blank',
       switchLabel: '¿Buscas una propiedad? Ver para quién buscamos →'
