@@ -62,7 +62,7 @@ for p in PROPERTIES:
     p["bodega"] = "—"
     p["resumen"] = "Resumen de la propiedad pendiente de carga."
     p["video_youtube"] = None   # link de YouTube real -> activa el botón "Ver en YouTube"
-    p["plano_img"] = None       # ruta a la imagen del plano (se sube por propiedad)
+    p["planos"] = []            # lista de {"label":..., "img":...} — 1 por piso (vacío = placeholder único)
     p["mapa_img"] = None        # ruta a la imagen del mapa (se sube por propiedad)
     p["pie"] = "—"
     p["monto_financiar"] = "—"
@@ -116,6 +116,10 @@ PROPERTIES_BY_ID["p1"].update(dict(
     dividendo_estimado="$2.356.328 – $2.719.252 aprox. (según banco, crédito UF a 30 años)",
     specs_text="3D + serv. / 3B + serv. · 210 m² útiles · 5.000 m² de terreno",
     mapa_img=f"{_TUNQUEN_FOTO_DIR}/tunquen-mapa.jpg",
+    planos=[
+        {"label": "Primer piso", "img": f"{_TUNQUEN_FOTO_DIR}/tunquen-plano-1.jpg"},
+        {"label": "Segundo piso", "img": f"{_TUNQUEN_FOTO_DIR}/tunquen-plano-2.jpg"},
+    ],
     resumen=(
         "<strong>Casa en Tunquén — donde el mar y el bosque se encuentran.</strong><br><br>"
         "Imagina despertar con la brisa marina entrando por la ventana y el verde infinito "
@@ -603,17 +607,20 @@ FICHA_JS = """(function(){
 
   var toggleBtn = document.getElementById('fichaResumenToggle');
   if (toggleBtn) {
-    var resumenEl = document.getElementById('fichaResumen');
+    var shortEl = document.getElementById('fichaResumenShort');
+    var fullEl = document.getElementById('fichaResumenFull');
     var textEl = document.getElementById('fichaResumenToggleText');
     var iconEl = document.getElementById('fichaResumenToggleIcon');
     toggleBtn.addEventListener('click', function(){
-      var expanded = resumenEl.style.maxHeight !== '4.95em';
+      var expanded = fullEl.style.display !== 'none';
       if (expanded) {
-        resumenEl.style.maxHeight = '4.95em';
+        fullEl.style.display = 'none';
+        shortEl.style.display = '-webkit-box';
         textEl.textContent = 'Leer más';
         iconEl.style.transform = 'rotate(0deg)';
       } else {
-        resumenEl.style.maxHeight = resumenEl.scrollHeight + 'px';
+        shortEl.style.display = 'none';
+        fullEl.style.display = 'block';
         textEl.textContent = 'Leer menos';
         iconEl.style.transform = 'rotate(180deg)';
       }
@@ -696,10 +703,42 @@ def ficha_video_block_html(p):
       {right}
     </div>"""
 
+def resumen_plain_text(html_str):
+    """Texto plano (sin tags) para la vista colapsada del resumen: así el
+    clamp de 4 líneas corta texto real y no líneas en blanco de los <br><br>
+    que separan párrafos en el HTML completo."""
+    text = re.sub(r"(?i)<br\s*/?>", " ", html_str)
+    text = re.sub(r"<[^>]+>", "", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
 def ficha_image_block_html(img_src, placeholder_icon, placeholder_text, alt):
     if img_src:
         return f'<img src="{img_src}" alt="{alt}" style="width:100%;height:100%;object-fit:contain"/>'
     return f'{placeholder_icon}<span style="font-size:13px;color:var(--gray-500)">{placeholder_text}</span>'
+
+def plano_blocks_html(p):
+    planos = p.get("planos") or []
+    if not planos:
+        return f"""<div class="ph-image" style="width:100%;min-height:190px;border-radius:14px;flex-direction:column;gap:8px">
+            {ficha_image_block_html(None, PLANO_PLACEHOLDER_ICON, 'Plano pendiente de carga', f"Plano de {p['titulo']}")}
+          </div>"""
+    if len(planos) == 1:
+        img = planos[0]["img"]
+        return f"""<div class="ph-image" style="width:100%;min-height:190px;border-radius:14px;flex-direction:column;gap:8px">
+            {ficha_image_block_html(img, PLANO_PLACEHOLDER_ICON, 'Plano pendiente de carga', f"Plano de {p['titulo']}")}
+          </div>"""
+    items = []
+    for pl in planos:
+        items.append(f"""<div style="display:flex;flex-direction:column;gap:8px">
+              <p style="font-size:13px;font-weight:700;color:var(--gray-600)">{pl['label']}</p>
+              <div class="ph-image" style="width:100%;min-height:190px;border-radius:14px;flex-direction:column;gap:8px">
+                {ficha_image_block_html(pl['img'], PLANO_PLACEHOLDER_ICON, 'Plano pendiente de carga', f"Plano {pl['label'].lower()} de {p['titulo']}")}
+              </div>
+            </div>""")
+    return f"""<div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px,1fr));gap:16px">
+            {"".join(items)}
+          </div>"""
 
 CARACTERISTICAS = [
     ("fichaDormitorios", "Dormitorios", "dormitorios",
@@ -778,7 +817,8 @@ def ficha_page_html(p):
         <!-- Resumen -->
         <div style="display:flex;flex-direction:column;gap:12px">
           <h2 style="font-size:19px;font-weight:700;color:var(--gray-900)">Resumen</h2>
-          <p id="fichaResumen" style="font-size:15px;color:var(--gray-700);line-height:1.65;max-height:4.95em;overflow:hidden;transition:max-height .3s ease">{p['resumen']}</p>
+          <p id="fichaResumenShort" style="font-size:15px;color:var(--gray-700);line-height:1.65;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden">{resumen_plain_text(p['resumen'])}</p>
+          <p id="fichaResumenFull" style="display:none;font-size:15px;color:var(--gray-700);line-height:1.65">{p['resumen']}</p>
           <button id="fichaResumenToggle" style="background:none;border:none;padding:0;color:var(--accent);font-weight:700;font-size:14px;display:flex;align-items:center;gap:4px;width:fit-content">
             <span id="fichaResumenToggleText">Leer más</span>
             <svg id="fichaResumenToggleIcon" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="transition:transform .2s ease"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -788,9 +828,7 @@ def ficha_page_html(p):
         <!-- Plano -->
         <div style="display:flex;flex-direction:column;gap:12px">
           <h2 style="font-size:19px;font-weight:700;color:var(--gray-900)">Plano de la propiedad</h2>
-          <div class="ph-image" style="width:100%;min-height:190px;border-radius:14px;flex-direction:column;gap:8px">
-            {ficha_image_block_html(p['plano_img'], PLANO_PLACEHOLDER_ICON, 'Plano pendiente de carga', f"Plano de {p['titulo']}")}
-          </div>
+          {plano_blocks_html(p)}
         </div>
 
         <!-- Mapa -->

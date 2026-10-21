@@ -17,17 +17,20 @@
 
   var toggleBtn = document.getElementById('fichaResumenToggle');
   if (toggleBtn) {
-    var resumenEl = document.getElementById('fichaResumen');
+    var shortEl = document.getElementById('fichaResumenShort');
+    var fullEl = document.getElementById('fichaResumenFull');
     var textEl = document.getElementById('fichaResumenToggleText');
     var iconEl = document.getElementById('fichaResumenToggleIcon');
     toggleBtn.addEventListener('click', function(){
-      var expanded = resumenEl.style.maxHeight !== '4.95em';
+      var expanded = fullEl.style.display !== 'none';
       if (expanded) {
-        resumenEl.style.maxHeight = '4.95em';
+        fullEl.style.display = 'none';
+        shortEl.style.display = '-webkit-box';
         textEl.textContent = 'Leer más';
         iconEl.style.transform = 'rotate(0deg)';
       } else {
-        resumenEl.style.maxHeight = resumenEl.scrollHeight + 'px';
+        shortEl.style.display = 'none';
+        fullEl.style.display = 'block';
         textEl.textContent = 'Leer menos';
         iconEl.style.transform = 'rotate(180deg)';
       }
