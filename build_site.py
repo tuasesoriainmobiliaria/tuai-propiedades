@@ -79,16 +79,20 @@ PROPERTIES_BY_ID = {p["id"]: p for p in PROPERTIES}
 # por propiedad; todo lo que no esté acá sigue en placeholder).
 # ----------------------------------------------------------------------
 _TUNQUEN_FOTO_DIR = "/assets/propiedades/casa-tunquen"
-# Portada provisional: la foto de la fachada (tunquen-30). El cliente pidió
-# que la portada sea el archivo "6459_corregida", pero el nombre original
-# se pierde al subir las fotos al chat, así que no hay forma de saber cuál
-# de las 31 fotos es esa — queda pendiente de confirmación.
-_TUNQUEN_FOTOS = [30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
-                  17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 31]
+# Portada confirmada por el cliente: "tunquen-portada.jpg" (su archivo
+# "6459_corregida", reenviado directamente ya que el nombre original se
+# pierde al subir fotos al chat). El resto del recorrido queda en el orden
+# de llegada hasta que el cliente confirme que coincide con el orden de la
+# publicación en Portal Inmobiliario.
+_TUNQUEN_FOTOS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+                  17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
 PROPERTIES_BY_ID["p1"].update(dict(
-    fotos=[f"{_TUNQUEN_FOTO_DIR}/tunquen-{n:02d}.jpg" for n in _TUNQUEN_FOTOS],
+    fotos=[f"{_TUNQUEN_FOTO_DIR}/tunquen-portada.jpg"] +
+          [f"{_TUNQUEN_FOTO_DIR}/tunquen-{n:02d}.jpg" for n in _TUNQUEN_FOTOS],
     video_youtube="https://www.youtube.com/watch?v=GagnKvKlRk8",
     dormitorios="4",
+    banos="3",
+    mapa_img=f"{_TUNQUEN_FOTO_DIR}/tunquen-mapa.jpg",
     resumen=(
         "<strong>Casa en Tunquén — donde el mar y el bosque se encuentran.</strong><br><br>"
         "Imagina despertar con la brisa marina entrando por la ventana y el verde infinito "
