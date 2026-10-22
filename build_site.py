@@ -158,6 +158,65 @@ HOME_HERO_PHOTOS = [f"{_TUNQUEN_FOTO_DIR}/tunquen-{n:02d}.jpg" for n in (30, 2, 
 # cocina, vista al mar.
 PROPERTIES_BY_ID["p1"]["fotos_card"] = [f"{_TUNQUEN_FOTO_DIR}/tunquen-{n:02d}.jpg" for n in (30, 2, 20, 17, 6, 24)]
 
+# ----------------------------------------------------------------------
+# Bodega comercial — Tocornal (p6)
+# ----------------------------------------------------------------------
+_TOCORNAL_FOTO_DIR = "/assets/propiedades/bodega-tocornal"
+# Portada = bt_5 (según el cliente), seguida del resto en el orden de llegada.
+_TOCORNAL_FOTOS = [5, 1, 2, 3, 4, 6, 7, 8, 9, 10]
+
+_TOCORNAL_RESUMEN = """<p><strong>Bodega Comercial | 502 m² en Santiago Centro | 20 UF/m² | Inversión a $ Remate.</strong></p>
+<p>¿Cuánto valor tendría para tu empresa operar más cerca de sus clientes, reducir distancias y contar con una propiedad comercial propia en un sector central de Santiago?</p>
+<p>Esta bodega reúne tres atributos difíciles de encontrar en una sola propiedad: ubicación, capacidad construida y versatilidad operacional.</p>
+<p>Se encuentra en un sector estratégico de Santiago, cerca de Avenida Matta y del eje Santa Isabel, con excelente conectividad hacia distintos puntos de la capital y condiciones especialmente atractivas para empresas que necesitan acercar su operación al centro de la ciudad.</p>
+<p style="margin-top:10px"><strong>Principales características</strong></p>
+<ul style="list-style:disc;padding-left:20px;display:flex;flex-direction:column;gap:4px;margin:0">
+<li>502 m² construidos</li>
+<li>302 m² de superficie de terreno</li>
+<li>Precio de venta: 11.199 UF</li>
+<li>Valor aproximado: 22,3 UF por m² construido</li>
+<li>Excelente aprovechamiento del terreno</li>
+<li>Ubicación central con alto flujo vehicular</li>
+<li>Potencial para logística urbana y operaciones de última milla</li>
+</ul>
+<p style="margin-top:10px"><strong>Una propiedad que puede impulsar tu empresa</strong></p>
+<p>Sus 502 m² construidos permiten desarrollar diferentes actividades, tales como:</p>
+<ul style="list-style:disc;padding-left:20px;display:flex;flex-direction:column;gap:4px;margin:0">
+<li>Almacenamiento y bodegaje</li>
+<li>Distribución y despacho / Última milla</li>
+<li>Logística urbana</li>
+<li>Operaciones de última milla</li>
+<li>Actividades productivas o comerciales</li>
+<li>Inversión para posterior arriendo</li>
+</ul>
+<p style="margin-top:10px">Aquí no solo estás comprando metros cuadrados. Estás incorporando a tu empresa una base operacional estratégicamente ubicada, con capacidad para almacenar, coordinar y distribuir desde un punto central de Santiago.</p>
+<p>Para un inversionista, representa la posibilidad de adquirir un activo comercial versátil, capaz de adaptarse a distintas actividades y perfiles de arrendatarios.</p>
+<p>Para una empresa, puede significar mayor control sobre su operación, menor dependencia del arriendo y un patrimonio inmobiliario que acompañe su crecimiento.</p>
+<p style="margin-top:10px"><strong>Más espacio, mejor ubicación y mayor eficiencia</strong></p>
+<p>La propiedad cuenta con una superficie construida superior al tamaño del terreno, logrando un aprovechamiento eficiente de cada metro cuadrado.</p>
+<p>Su cercanía con Avenida Matta y Santa Isabel facilita el acceso de trabajadores, proveedores y vehículos de distribución, convirtiéndola en una alternativa especialmente interesante para empresas que buscan operar dentro de Santiago sin trasladarse a sectores periféricos.</p>
+<p style="margin-top:10px"><strong>Una oportunidad que merece ser evaluada</strong></p>
+<p>Las propiedades comerciales de gran superficie y ubicación central son cada vez más difíciles de encontrar.</p>
+<p>Si estás buscando una bodega para instalar tu empresa, fortalecer tu operación logística o incorporar un activo comercial a tu patrimonio, esta propiedad puede ser la oportunidad que estabas esperando.</p>
+<p>Agenda un recorrido presencial y descubre todo su potencial.</p>"""
+
+PROPERTIES_BY_ID["p6"].update(dict(
+    comuna="Santiago Centro",
+    fotos=[f"{_TOCORNAL_FOTO_DIR}/tocornal-{n:02d}.jpg" for n in _TOCORNAL_FOTOS],
+    video_youtube="https://www.youtube.com/watch?v=Shm-8wb6IG4",
+    dormitorios="No aplica",
+    banos="No aplica",
+    superficie_util="502 m²",
+    superficie_total="302 m²",
+    estacionamientos="—",
+    bodega="—",
+    uf_precio="UF 11.199",
+    clp_precio="$ 461.397.120 CLP aprox.",
+    precio="UF 11.199",
+    specs_text="502 m² construidos · 302 m² de terreno · UF 22,3/m² aprox.",
+    resumen=_TOCORNAL_RESUMEN,
+))
+
 # ======================================================================
 # 2) ESTILOS COMPARTIDOS (un solo archivo, assets/styles.css)
 # ======================================================================
@@ -725,8 +784,12 @@ def ficha_video_block_html(p):
 def resumen_plain_text(html_str):
     """Texto plano (sin tags) para la vista colapsada del resumen: así el
     clamp de 4 líneas corta texto real y no líneas en blanco de los <br><br>
-    que separan párrafos en el HTML completo."""
-    text = re.sub(r"(?i)<br\s*/?>", " ", html_str)
+    que separan párrafos en el HTML completo. Los cierres de bloque (</p>,
+    </li>, </div>, etc.) se cambian por un espacio antes de sacar el resto
+    de las etiquetas, para que párrafos o ítems de lista consecutivos no
+    queden pegados en una sola palabra."""
+    text = re.sub(r"(?i)</(p|div|li|ul|ol|h[1-6])\s*>", " ", html_str)
+    text = re.sub(r"(?i)<br\s*/?>", " ", text)
     text = re.sub(r"<[^>]+>", "", text)
     text = re.sub(r"\s+", " ", text).strip()
     return text
@@ -837,7 +900,7 @@ def ficha_page_html(p):
         <div style="display:flex;flex-direction:column;gap:12px">
           <h2 style="font-size:19px;font-weight:700;color:var(--gray-900)">Resumen</h2>
           <p id="fichaResumenShort" style="font-size:15px;color:var(--gray-700);line-height:1.65;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden">{resumen_plain_text(p['resumen'])}</p>
-          <p id="fichaResumenFull" style="display:none;font-size:15px;color:var(--gray-700);line-height:1.65">{p['resumen']}</p>
+          <div id="fichaResumenFull" style="display:none;font-size:15px;color:var(--gray-700);line-height:1.65">{p['resumen']}</div>
           <button id="fichaResumenToggle" style="background:none;border:none;padding:0;color:var(--accent);font-weight:700;font-size:14px;display:flex;align-items:center;gap:4px;width:fit-content">
             <span id="fichaResumenToggleText">Leer más</span>
             <svg id="fichaResumenToggleIcon" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="transition:transform .2s ease"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
