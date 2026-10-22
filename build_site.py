@@ -173,8 +173,8 @@ _TOCORNAL_RESUMEN = """<p><strong>Bodega Comercial | 502 m² en Santiago Centro 
 <ul style="list-style:disc;padding-left:20px;display:flex;flex-direction:column;gap:4px;margin:0">
 <li>502 m² construidos</li>
 <li>302 m² de superficie de terreno</li>
-<li>Precio de venta: 11.199 UF</li>
-<li>Valor aproximado: 22,3 UF por m² construido</li>
+<li>Precio de venta: 10.099 UF (precio rebajado)</li>
+<li>Valor aproximado: 20,1 UF por m² construido</li>
 <li>Excelente aprovechamiento del terreno</li>
 <li>Ubicación central con alto flujo vehicular</li>
 <li>Potencial para logística urbana y operaciones de última milla</li>
@@ -210,15 +210,15 @@ PROPERTIES_BY_ID["p6"].update(dict(
     superficie_total="302 m²",
     estacionamientos="—",
     bodega="—",
-    uf_precio="UF 11.199",
-    clp_precio="$ 461.397.120 CLP aprox.",
-    precio="UF 11.199",
-    specs_text="502 m² construidos · 302 m² de terreno · UF 22,3/m² aprox.",
+    uf_precio="UF 10.099",
+    clp_precio="$ 416.077.285 CLP aprox.",
+    precio="UF 10.099",
+    specs_text="502 m² construidos · 302 m² de terreno · UF 20,1/m² aprox.",
     resumen=_TOCORNAL_RESUMEN,
     mapa_img=f"{_TOCORNAL_FOTO_DIR}/tocornal-mapa.jpg",
-    pie="UF 1.119,9 (10%) · $46.139.712 aprox.",
-    monto_financiar="UF 10.079,1 · $415.257.408 aprox.",
-    dividendo_estimado="$2.051.753 – $2.367.755 aprox. (según banco, crédito UF a 30 años)",
+    pie="UF 1.009,9 (10%) · $41.607.729 aprox.",
+    monto_financiar="UF 9.089,1 · $374.469.557 aprox.",
+    dividendo_estimado="$1.850.224 – $2.135.187 aprox. (según banco, crédito UF a 30 años)",
 ))
 # Orden de miniaturas en la tarjeta de la portada, indicado por el cliente.
 PROPERTIES_BY_ID["p6"]["fotos_card"] = [f"{_TOCORNAL_FOTO_DIR}/tocornal-{n:02d}.jpg" for n in (5, 1, 3, 4, 8, 10)]
