@@ -215,6 +215,10 @@ PROPERTIES_BY_ID["p6"].update(dict(
     precio="UF 11.199",
     specs_text="502 m² construidos · 302 m² de terreno · UF 22,3/m² aprox.",
     resumen=_TOCORNAL_RESUMEN,
+    mapa_img=f"{_TOCORNAL_FOTO_DIR}/tocornal-mapa.jpg",
+    pie="UF 1.119,9 (10%) · $46.139.712 aprox.",
+    monto_financiar="UF 10.079,1 · $415.257.408 aprox.",
+    dividendo_estimado="$2.051.753 – $2.367.755 aprox. (según banco, crédito UF a 30 años)",
 ))
 
 # ======================================================================
