@@ -177,7 +177,7 @@ _TOCORNAL_RESUMEN = """<p><strong>Bodega Comercial | 502 m² en Santiago Centro 
 <li>Valor aproximado: 20,1 UF por m² construido</li>
 <li>3 baños</li>
 <li>3 bodegas</li>
-<li>3 estacionamientos</li>
+<li>2 estacionamientos</li>
 <li>Comedor y camarín</li>
 <li>Excelente aprovechamiento del terreno</li>
 <li>Ubicación central con alto flujo vehicular</li>
@@ -212,7 +212,7 @@ PROPERTIES_BY_ID["p6"].update(dict(
     banos="3",
     superficie_util="502 m²",
     superficie_total="302 m²",
-    estacionamientos="3",
+    estacionamientos="2",
     bodega="3",
     uf_precio="UF 10.099",
     clp_precio="$ 416.077.285 CLP aprox.",
