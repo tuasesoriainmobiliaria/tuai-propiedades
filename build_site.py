@@ -220,6 +220,8 @@ PROPERTIES_BY_ID["p6"].update(dict(
     monto_financiar="UF 10.079,1 · $415.257.408 aprox.",
     dividendo_estimado="$2.051.753 – $2.367.755 aprox. (según banco, crédito UF a 30 años)",
 ))
+# Orden de miniaturas en la tarjeta de la portada, indicado por el cliente.
+PROPERTIES_BY_ID["p6"]["fotos_card"] = [f"{_TOCORNAL_FOTO_DIR}/tocornal-{n:02d}.jpg" for n in (5, 1, 3, 4, 8, 10)]
 
 # ======================================================================
 # 2) ESTILOS COMPARTIDOS (un solo archivo, assets/styles.css)
