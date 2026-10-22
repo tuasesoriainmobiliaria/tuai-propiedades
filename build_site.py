@@ -218,6 +218,15 @@ img,svg{display:block}
 .enter{animation:fadeUp .5s ease both}
 .hidden{display:none !important}
 .icon-accent svg path, .icon-accent svg rect, .icon-accent svg circle{stroke:var(--accent)}
+.nav-desktop{display:flex}
+.menu-toggle-btn{display:none}
+@media (max-width: 940px){
+  .nav-desktop{display:none}
+  .menu-toggle-btn{display:flex}
+}
+@media (min-width: 941px){
+  #mobileNav{display:none !important}
+}
 """
 
 # ======================================================================
@@ -285,7 +294,7 @@ def header_html(prefix):
         <img src="{prefix}assets/logo.png" alt="Tu Asesoría Inmobiliaria" style="height:54px;width:auto;display:block"/>
       </a>
 
-      <nav aria-label="Navegación principal" style="align-items:center;gap:30px;display:flex">
+      <nav aria-label="Navegación principal" class="nav-desktop" style="align-items:center;gap:30px">
         <div style="position:relative">
           <button id="propMenuBtnDesktop" aria-haspopup="true" aria-expanded="false" class="nav-link" style="display:flex;align-items:center;gap:5px;padding:0">
             Propiedades
@@ -302,7 +311,7 @@ def header_html(prefix):
       </nav>
 
       <div style="display:flex;align-items:center;gap:14px">
-        <button id="menuToggleBtn" aria-label="Abrir menú" aria-expanded="false" style="background:none;border:none;padding:8px;display:flex">
+        <button id="menuToggleBtn" class="menu-toggle-btn" aria-label="Abrir menú" aria-expanded="false" style="background:none;border:none;padding:8px">
           <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
             <line x1="3" y1="7" x2="21" y2="7" stroke="var(--gray-900)" stroke-width="2" stroke-linecap="round"/>
             <line x1="3" y1="12" x2="21" y2="12" stroke="var(--gray-900)" stroke-width="2" stroke-linecap="round"/>

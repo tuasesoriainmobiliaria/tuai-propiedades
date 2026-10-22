@@ -55,3 +55,12 @@ img,svg{display:block}
 .enter{animation:fadeUp .5s ease both}
 .hidden{display:none !important}
 .icon-accent svg path, .icon-accent svg rect, .icon-accent svg circle{stroke:var(--accent)}
+.nav-desktop{display:flex}
+.menu-toggle-btn{display:none}
+@media (max-width: 940px){
+  .nav-desktop{display:none}
+  .menu-toggle-btn{display:flex}
+}
+@media (min-width: 941px){
+  #mobileNav{display:none !important}
+}
