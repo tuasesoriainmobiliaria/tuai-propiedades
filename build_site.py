@@ -218,7 +218,7 @@ PROPERTIES_BY_ID["p6"].update(dict(
     mapa_img=f"{_TOCORNAL_FOTO_DIR}/tocornal-mapa.jpg",
     pie="UF 1.009,9 (10%) · $41.607.729 aprox.",
     monto_financiar="UF 9.089,1 · $374.469.557 aprox.",
-    dividendo_estimado="$1.850.224 – $2.135.187 aprox. (según banco, crédito UF a 30 años)",
+    dividendo_estimado="$1.863.057 – $2.130.856 aprox. (según banco, crédito UF a 30 años)",
 ))
 # Orden de miniaturas en la tarjeta de la portada, indicado por el cliente.
 PROPERTIES_BY_ID["p6"]["fotos_card"] = [f"{_TOCORNAL_FOTO_DIR}/tocornal-{n:02d}.jpg" for n in (5, 1, 3, 4, 8, 10)]
