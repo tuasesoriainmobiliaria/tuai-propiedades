@@ -175,6 +175,10 @@ _TOCORNAL_RESUMEN = """<p><strong>Bodega Comercial | 502 m² en Santiago Centro 
 <li>302 m² de superficie de terreno</li>
 <li>Precio de venta: 10.099 UF (precio rebajado)</li>
 <li>Valor aproximado: 20,1 UF por m² construido</li>
+<li>3 baños</li>
+<li>3 bodegas</li>
+<li>3 estacionamientos</li>
+<li>Comedor y camarín</li>
 <li>Excelente aprovechamiento del terreno</li>
 <li>Ubicación central con alto flujo vehicular</li>
 <li>Potencial para logística urbana y operaciones de última milla</li>
@@ -205,11 +209,11 @@ PROPERTIES_BY_ID["p6"].update(dict(
     fotos=[f"{_TOCORNAL_FOTO_DIR}/tocornal-{n:02d}.jpg" for n in _TOCORNAL_FOTOS],
     video_youtube="https://www.youtube.com/watch?v=Shm-8wb6IG4",
     dormitorios="No aplica",
-    banos="No aplica",
+    banos="3",
     superficie_util="502 m²",
     superficie_total="302 m²",
-    estacionamientos="—",
-    bodega="—",
+    estacionamientos="3",
+    bodega="3",
     uf_precio="UF 10.099",
     clp_precio="$ 416.077.285 CLP aprox.",
     precio="UF 10.099",
