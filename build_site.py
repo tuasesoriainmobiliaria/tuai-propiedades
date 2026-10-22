@@ -222,6 +222,9 @@ PROPERTIES_BY_ID["p6"].update(dict(
 ))
 # Orden de miniaturas en la tarjeta de la portada, indicado por el cliente.
 PROPERTIES_BY_ID["p6"]["fotos_card"] = [f"{_TOCORNAL_FOTO_DIR}/tocornal-{n:02d}.jpg" for n in (5, 1, 3, 4, 8, 10)]
+PROPERTIES_BY_ID["p6"]["planos"] = [
+    {"label": "1º y 2º piso", "img": f"{_TOCORNAL_FOTO_DIR}/tocornal-plano.jpg"},
+]
 
 # ======================================================================
 # 2) ESTILOS COMPARTIDOS (un solo archivo, assets/styles.css)
