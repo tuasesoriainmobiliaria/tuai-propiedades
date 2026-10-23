@@ -181,14 +181,20 @@ _SANBERNARDO_RESUMEN = """<p><strong>Departamento en venta — San Bernardo | Ta
 <ul style="list-style:disc;padding-left:20px;display:flex;flex-direction:column;gap:4px;margin:0">
 <li>Ubicación: Avenida Colón 772, San Bernardo</li>
 <li>Condominio cerrado con áreas verdes, conserjería y cámaras de seguridad</li>
+<li>4 dormitorios y 2 baños</li>
+<li>75 m² construidos + 9 m² de terraza cerrada</li>
 <li>Ventanales termopanel</li>
 <li>Terraza cerrada</li>
 <li>Dormitorios separados del área social</li>
 <li>Cocina cerrada e independiente</li>
 <li>Logia</li>
+<li>Sin estacionamiento ni bodega</li>
+<li>Gasto común: $75.000 aprox.</li>
 <li>Tasación comercial: $139.000.000 (UF 3.373,4 aprox.)</li>
 <li>Precio de venta: $109.000.000 (UF 2.645,3 aprox., precio rebajado)</li>
 </ul>
+<p style="margin-top:10px"><strong>Un beneficio adicional: no paga contribuciones</strong></p>
+<p>Por su avalúo fiscal, esta propiedad está exenta del pago de contribuciones — un ahorro adicional para quien la compre, que se suma a la diferencia entre su tasación comercial y su precio de venta.</p>
 <p style="margin-top:10px"><strong>Conectividad</strong></p>
 <p>Avenida Colón es una arteria principal con conexión directa y a solo 5 minutos de la carretera, lo que permite llegar a distintos puntos de Santiago sin depender de vías secundarias congestionadas.</p>
 <p style="margin-top:10px">Agenda tu visita y conoce la propiedad.</p>"""
@@ -198,6 +204,13 @@ PROPERTIES_BY_ID["p3"].update(dict(
     uf_precio="UF 2.645,3 aprox.",
     clp_precio="$ 109.000.000 CLP",
     precio="$ 109.000.000",
+    dormitorios="4",
+    banos="2",
+    superficie_util="75 m²",
+    superficie_total="84 m² (75 m² construidos + 9 m² terraza cerrada)",
+    estacionamientos="Sin estacionamiento",
+    bodega="Sin bodega",
+    specs_text="4D / 2B · 75 m² construidos · 9 m² terraza cerrada",
 ))
 
 # ----------------------------------------------------------------------
