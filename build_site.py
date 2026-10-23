@@ -159,6 +159,17 @@ HOME_HERO_PHOTOS = [f"{_TUNQUEN_FOTO_DIR}/tunquen-{n:02d}.jpg" for n in (30, 2, 
 PROPERTIES_BY_ID["p1"]["fotos_card"] = [f"{_TUNQUEN_FOTO_DIR}/tunquen-{n:02d}.jpg" for n in (30, 2, 20, 17, 6, 24)]
 
 # ----------------------------------------------------------------------
+# Departamento — San Bernardo (p3)
+# ----------------------------------------------------------------------
+# Fotos cargadas; orden y portada confirmados por el cliente (foto 1 =
+# portada). Falta aún: resumen/texto, precio, dormitorios/baños/m²,
+# video, plano, mapa, simulación de crédito y el orden de miniaturas
+# para la tarjeta de la portada (fotos_card) — pendiente, el cliente
+# lo enviará después.
+_SANBERNARDO_FOTO_DIR = "/assets/propiedades/depto-san-bernardo"
+PROPERTIES_BY_ID["p3"]["fotos"] = [f"{_SANBERNARDO_FOTO_DIR}/sanbernardo-{n:02d}.jpg" for n in range(1, 15)]
+
+# ----------------------------------------------------------------------
 # Bodega comercial — Tocornal (p6)
 # ----------------------------------------------------------------------
 _TOCORNAL_FOTO_DIR = "/assets/propiedades/bodega-tocornal"
