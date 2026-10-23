@@ -168,6 +168,7 @@ PROPERTIES_BY_ID["p1"]["fotos_card"] = [f"{_TUNQUEN_FOTO_DIR}/tunquen-{n:02d}.jp
 # lo enviará después.
 _SANBERNARDO_FOTO_DIR = "/assets/propiedades/depto-san-bernardo"
 PROPERTIES_BY_ID["p3"]["fotos"] = [f"{_SANBERNARDO_FOTO_DIR}/sanbernardo-{n:02d}.jpg" for n in range(1, 15)]
+PROPERTIES_BY_ID["p3"]["video_youtube"] = "https://www.youtube.com/watch?v=3r4ZDG9gY5k"
 
 # ----------------------------------------------------------------------
 # Bodega comercial — Tocornal (p6)
