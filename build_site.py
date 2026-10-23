@@ -170,6 +170,36 @@ _SANBERNARDO_FOTO_DIR = "/assets/propiedades/depto-san-bernardo"
 PROPERTIES_BY_ID["p3"]["fotos"] = [f"{_SANBERNARDO_FOTO_DIR}/sanbernardo-{n:02d}.jpg" for n in range(1, 15)]
 PROPERTIES_BY_ID["p3"]["video_youtube"] = "https://www.youtube.com/watch?v=3r4ZDG9gY5k"
 
+# Precio y resumen de texto enviados por el cliente (109 millones, antes
+# tasado en 139 millones). El cliente entregó los montos en CLP; la
+# conversión a UF es un cálculo nuestro con el valor de la UF del
+# 23/10/2026 ($41.205,16), por eso va marcada "aprox.".
+_SANBERNARDO_RESUMEN = """<p><strong>Departamento en venta — San Bernardo | Tasación comercial $139.000.000 | Precio de venta $109.000.000 (precio rebajado)</strong></p>
+<p>Ubicado en Avenida Colón 772, San Bernardo, este departamento se encuentra dentro de un condominio cerrado con áreas verdes, conserjería y cámaras de seguridad, a minutos de comercio, colegios y centros de salud.</p>
+<p>Su tasación comercial alcanzó los $139.000.000 y hoy se vende en $109.000.000: treinta millones de diferencia ya reflejados en el precio de venta.</p>
+<p style="margin-top:10px"><strong>Principales características</strong></p>
+<ul style="list-style:disc;padding-left:20px;display:flex;flex-direction:column;gap:4px;margin:0">
+<li>Ubicación: Avenida Colón 772, San Bernardo</li>
+<li>Condominio cerrado con áreas verdes, conserjería y cámaras de seguridad</li>
+<li>Ventanales termopanel</li>
+<li>Terraza cerrada</li>
+<li>Dormitorios separados del área social</li>
+<li>Cocina cerrada e independiente</li>
+<li>Logia</li>
+<li>Tasación comercial: $139.000.000 (UF 3.373,4 aprox.)</li>
+<li>Precio de venta: $109.000.000 (UF 2.645,3 aprox., precio rebajado)</li>
+</ul>
+<p style="margin-top:10px"><strong>Conectividad</strong></p>
+<p>Avenida Colón es una arteria principal con conexión directa y a solo 5 minutos de la carretera, lo que permite llegar a distintos puntos de Santiago sin depender de vías secundarias congestionadas.</p>
+<p style="margin-top:10px">Agenda tu visita y conoce la propiedad.</p>"""
+
+PROPERTIES_BY_ID["p3"].update(dict(
+    resumen=_SANBERNARDO_RESUMEN,
+    uf_precio="UF 2.645,3 aprox.",
+    clp_precio="$ 109.000.000 CLP",
+    precio="$ 109.000.000",
+))
+
 # ----------------------------------------------------------------------
 # Bodega comercial — Tocornal (p6)
 # ----------------------------------------------------------------------
