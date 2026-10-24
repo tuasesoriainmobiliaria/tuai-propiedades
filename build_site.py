@@ -212,6 +212,13 @@ PROPERTIES_BY_ID["p3"].update(dict(
     bodega="Sin bodega",
     specs_text="4D / 2B · 75 m² construidos · 9 m² terraza cerrada",
     planos=[{"label": "Planta", "img": f"{_SANBERNARDO_FOTO_DIR}/sanbernardo-plano.jpg"}],
+    # Simulación de crédito: 10% pie, 30 años plazo (confirmado por el
+    # cliente). Pie y monto a financiar calculados sobre el precio de
+    # venta (UF 2.645,3 aprox.); dividendo tomado directo de la tabla
+    # CMF real que envió (UF al 24/10/2026 = $41.210,47).
+    pie="UF 264,5 (10%) · $10.900.000 aprox.",
+    monto_financiar="UF 2.380,8 · $98.100.000 aprox.",
+    dividendo_estimado="$494.114 – $569.941 aprox. (según banco, crédito UF a 30 años)",
 ))
 
 # ----------------------------------------------------------------------
