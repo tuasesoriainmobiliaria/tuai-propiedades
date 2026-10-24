@@ -220,6 +220,8 @@ PROPERTIES_BY_ID["p3"].update(dict(
     monto_financiar="UF 2.380,8 · $98.100.000 aprox.",
     dividendo_estimado="$494.114 – $569.941 aprox. (según banco, crédito UF a 30 años)",
 ))
+# Orden de miniaturas en la tarjeta de la portada, indicado por el cliente.
+PROPERTIES_BY_ID["p3"]["fotos_card"] = [f"{_SANBERNARDO_FOTO_DIR}/sanbernardo-{n:02d}.jpg" for n in (1, 2, 6, 8, 10, 13)]
 
 # ----------------------------------------------------------------------
 # Bodega comercial — Tocornal (p6)
