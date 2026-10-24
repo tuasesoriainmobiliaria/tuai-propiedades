@@ -211,6 +211,7 @@ PROPERTIES_BY_ID["p3"].update(dict(
     estacionamientos="Sin estacionamiento",
     bodega="Sin bodega",
     specs_text="4D / 2B · 75 m² construidos · 9 m² terraza cerrada",
+    planos=[{"label": "Planta", "img": f"{_SANBERNARDO_FOTO_DIR}/sanbernardo-plano.jpg"}],
 ))
 
 # ----------------------------------------------------------------------
