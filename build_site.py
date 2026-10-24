@@ -222,6 +222,7 @@ PROPERTIES_BY_ID["p3"].update(dict(
 ))
 # Orden de miniaturas en la tarjeta de la portada, indicado por el cliente.
 PROPERTIES_BY_ID["p3"]["fotos_card"] = [f"{_SANBERNARDO_FOTO_DIR}/sanbernardo-{n:02d}.jpg" for n in (1, 2, 6, 8, 10, 13)]
+PROPERTIES_BY_ID["p3"]["mapa_img"] = f"{_SANBERNARDO_FOTO_DIR}/sanbernardo-mapa.jpg"
 
 # ----------------------------------------------------------------------
 # Bodega comercial — Tocornal (p6)
