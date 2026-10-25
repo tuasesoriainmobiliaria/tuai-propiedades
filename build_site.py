@@ -838,7 +838,7 @@ def ficha_slide_html(foto, index):
     hidden = "" if index == 0 else " hidden"
     loading = "eager" if index == 0 else "lazy"
     if foto:
-        inner = f'<img src="{foto}" alt="" loading="{loading}" style="width:100%;height:100%;object-fit:cover"/>'
+        inner = f'<img src="{foto}" alt="" loading="{loading}" style="width:100%;height:100%;object-fit:contain"/>'
     else:
         inner = f'{PLACEHOLDER_ICON}<span style="font-size:14px;color:var(--gray-500)">Foto de la propiedad</span>'
     return f'<div class="ficha-slide{hidden}" data-index="{index}" style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;position:absolute;inset:0">{inner}</div>'
