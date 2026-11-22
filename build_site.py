@@ -32,8 +32,8 @@ EMAIL_DESTINO = "tuasesoriainmobiliariacl@gmail.com"
 PROPERTIES = [
     dict(id="p1", slug="casa-tunquen", titulo="Casa en venta — Tunquén",
          comuna="Tunquén", tipo="Venta", tipo_key="venta", tag_class="tag-venta", emoji="🏠"),
-    dict(id="p2", slug="depto-san-miguel", titulo="Departamento en venta — San Miguel",
-         comuna="San Miguel, Santiago", tipo="Venta", tipo_key="venta", tag_class="tag-venta", emoji="🏢"),
+    # p2 (depto-san-miguel) retirado del catálogo a pedido del cliente:
+    # se subirá información nueva más adelante.
     dict(id="p3", slug="depto-san-bernardo", titulo="Departamento en venta — San Bernardo",
          comuna="San Bernardo, Santiago", tipo="Venta", tipo_key="venta", tag_class="tag-venta", emoji="🏢"),
     dict(id="p4", slug="depto-pucon", titulo="Departamento en venta — Pucón",
