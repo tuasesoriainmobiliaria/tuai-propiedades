@@ -225,6 +225,61 @@ PROPERTIES_BY_ID["p3"]["fotos_card"] = [f"{_SANBERNARDO_FOTO_DIR}/sanbernardo-{n
 PROPERTIES_BY_ID["p3"]["mapa_img"] = f"{_SANBERNARDO_FOTO_DIR}/sanbernardo-mapa.jpg"
 
 # ----------------------------------------------------------------------
+# Estacionamiento — Santiago Centro (p5)
+# ----------------------------------------------------------------------
+_ESTACIONAMIENTO_FOTO_DIR = "/assets/propiedades/estacionamiento-santiago-centro"
+
+_ESTACIONAMIENTO_RESUMEN = """<p><strong>Estacionamiento techado en esquina, 1er piso — Santiago Centro | Precio de venta $16.900.000 (avalúo fiscal $20.000.000)</strong></p>
+<p>Tu primera inversión inmobiliaria cabe en 15 m². Se vende estacionamiento individual, ubicado en el primer piso de un edificio exclusivo de estacionamientos en Calle Compañía 1357, Santiago Centro. Entras directo desde la calle (1er piso), estacionas y sigues con tu día.</p>
+<p style="margin-top:10px"><strong>Ubicación estratégica</strong></p>
+<p>A pasos de los Juzgados Civiles, el Conservador de Bienes Raíces de Santiago, el Mall Espacio M, la Dirección de Bienestar de Carabineros y la Seremi de Salud. Es un sector con flujo diario de abogados, funcionarios y público, con alta demanda de arriendo de estacionamientos.</p>
+<p style="margin-top:10px"><strong>Principales características</strong></p>
+<ul style="list-style:disc;padding-left:20px;display:flex;flex-direction:column;gap:4px;margin:0">
+<li>Dirección: Compañía 1357, Santiago Centro</li>
+<li>Plaza individual de 3 m de ancho × 5 m de largo × 2,25 m de altura (15 m²)</li>
+<li>Lugar interior, techado y seguro</li>
+<li>Primer piso, con acceso directo y rápido desde la calle</li>
+<li>Solo en esquina, sin riesgo de que lo choquen</li>
+<li>Edificio exclusivo de estacionamientos</li>
+<li>Gasto común: $16.000 mensual</li>
+<li>Avalúo fiscal: $20.000.000 (UF 483,3 aprox.) — se vende bajo el avalúo</li>
+<li>Precio de venta: $16.900.000 (UF 408,4 aprox.)</li>
+</ul>
+<p style="margin-top:10px"><strong>Ideal para</strong></p>
+<ul style="list-style:disc;padding-left:20px;display:flex;flex-direction:column;gap:4px;margin:0">
+<li>Uso personal, si trabajas o haces trámites en el centro</li>
+<li>Inversión con bajo capital: un activo concreto que puedes arrendar desde el primer mes</li>
+</ul>
+<p style="margin-top:10px">En el centro de Santiago, encontrar dónde estacionar es lo más escaso. Este lugar ya es tuyo si lo decides hoy. Escríbenos y coordina tu visita.</p>"""
+
+PROPERTIES_BY_ID["p5"].update(dict(
+    titulo="Estacionamiento techado en esquina, 1er piso, Stgo. Centro",
+    comuna="Santiago Centro",
+    fotos=[f"{_ESTACIONAMIENTO_FOTO_DIR}/esc-{n:02d}.jpg" for n in range(1, 7)],
+    video_youtube="https://www.youtube.com/watch?v=Xf9qVxZDS9g",
+    resumen=_ESTACIONAMIENTO_RESUMEN,
+    uf_precio="UF 408,4 aprox.",
+    clp_precio="$ 16.900.000 CLP",
+    precio="$ 16.900.000",
+    dormitorios="No aplica",
+    banos="No aplica",
+    superficie_util="15 m²",
+    superficie_total="15 m² (3 × 5 m)",
+    estacionamientos="1",
+    bodega="No aplica",
+    specs_text="Plaza individual · 15 m² (3×5 m) · 1er piso · Techada",
+    mapa_img=f"{_ESTACIONAMIENTO_FOTO_DIR}/esc-03.jpg",
+    planos=[{"label": "Dimensiones", "img": f"{_ESTACIONAMIENTO_FOTO_DIR}/esc-05.jpg"}],
+    # Simulación de crédito: 10% pie, 30 años plazo (confirmado por el
+    # cliente). Pie y monto a financiar calculados sobre el precio de
+    # venta (UF 408,4 aprox.); dividendo tomado directo de la tabla CMF
+    # real que envió (UF al 22/11/2026 = $41.384,81).
+    pie="UF 40,8 (10%) · $1.690.000 aprox.",
+    monto_financiar="UF 367,6 · $15.210.000 aprox.",
+    dividendo_estimado="$78.631 – $80.700 aprox. (según banco, crédito UF a 30 años)",
+))
+
+# ----------------------------------------------------------------------
 # Bodega comercial — Tocornal (p6)
 # ----------------------------------------------------------------------
 _TOCORNAL_FOTO_DIR = "/assets/propiedades/bodega-tocornal"
